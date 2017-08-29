@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D393D1F55AF850074CF1F /* TeamChatVC.swift */; };
+		07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */; };
+		07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D591F5467BD003D6358 /* BasketballTeam.swift */; };
+		07609D5C1F5474F3003D6358 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D5B1F5474F3003D6358 /* CustomSlider.swift */; };
+		07609D5E1F547F99003D6358 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07609D5D1F547F99003D6358 /* Media.xcassets */; };
+		07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D5F1F54EBE3003D6358 /* TableViewController.swift */; };
+		07609D621F54F959003D6358 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D611F54F959003D6358 /* SearchTextField.swift */; };
 		078FE8921F535D330036D722 /* BasketballMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FE8911F535D330036D722 /* BasketballMainVC.swift */; };
 		07C56C701F536F15001D1E88 /* ViewWithWhiteBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */; };
 		07C56C721F53788F001D1E88 /* onboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C56C711F53788F001D1E88 /* onboardingVC.swift */; };
 		07C56C741F53AC4F001D1E88 /* TakımKurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C56C731F53AC4F001D1E88 /* TakımKurVC.swift */; };
+		07FABD031F54610B00B279AA /* EslesmeArayanTakımlarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FABD021F54610B00B279AA /* EslesmeArayanTakımlarVC.swift */; };
 		07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBEA671F531DDE004EDDE2 /* AppDelegate.swift */; };
 		07FBEA6D1F531DDE004EDDE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FBEA6B1F531DDE004EDDE2 /* Main.storyboard */; };
-		07FBEA6F1F531DDE004EDDE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FBEA6E1F531DDE004EDDE2 /* Assets.xcassets */; };
 		07FBEA721F531DDE004EDDE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FBEA701F531DDE004EDDE2 /* LaunchScreen.storyboard */; };
 		07FBEA7A1F531E04004EDDE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07FBEA791F531E04004EDDE2 /* GoogleService-Info.plist */; };
 		07FBEA801F53346A004EDDE2 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */; };
@@ -28,25 +35,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071D393D1F55AF850074CF1F /* TeamChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamChatVC.swift; sourceTree = "<group>"; };
+		07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EslesmeArayanTakimCell.swift; sourceTree = "<group>"; };
+		07609D591F5467BD003D6358 /* BasketballTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeam.swift; sourceTree = "<group>"; };
+		07609D5B1F5474F3003D6358 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		07609D5D1F547F99003D6358 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		07609D5F1F54EBE3003D6358 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		07609D611F54F959003D6358 /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		078FE8911F535D330036D722 /* BasketballMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballMainVC.swift; sourceTree = "<group>"; };
-		07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithWhiteBorder.swift; sourceTree = "<group>"; };
+		07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewWithWhiteBorder.swift; path = "Mac Bul!/ViewWithWhiteBorder.swift"; sourceTree = "<group>"; };
 		07C56C711F53788F001D1E88 /* onboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboardingVC.swift; sourceTree = "<group>"; };
 		07C56C731F53AC4F001D1E88 /* TakımKurVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TakımKurVC.swift"; sourceTree = "<group>"; };
+		07FABD021F54610B00B279AA /* EslesmeArayanTakımlarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EslesmeArayanTakımlarVC.swift"; sourceTree = "<group>"; };
 		07FBEA641F531DDE004EDDE2 /* Mac Bul!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Bul!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FBEA671F531DDE004EDDE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07FBEA6C1F531DDE004EDDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07FBEA6E1F531DDE004EDDE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07FBEA711F531DDE004EDDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07FBEA731F531DDE004EDDE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FBEA791F531E04004EDDE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		07FBEA851F533550004EDDE2 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
+		07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedView.swift; path = "Mac Bul!/RoundedView.swift"; sourceTree = "<group>"; };
+		07FBEA851F533550004EDDE2 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldWithInsets.swift; path = "Mac Bul!/TextFieldWithInsets.swift"; sourceTree = "<group>"; };
 		07FBEA8A1F533C36004EDDE2 /* HesabaGirVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HesabaGirVC.swift; sourceTree = "<group>"; };
 		07FBEA8C1F533C9A004EDDE2 /* HesapOlusturVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HesapOlusturVC.swift; sourceTree = "<group>"; };
 		07FBEA901F534073004EDDE2 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		07FBEA921F534083004EDDE2 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		07FBEA961F534A16004EDDE2 /* SecimVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecimVC.swift; sourceTree = "<group>"; };
-		07FBEA981F535439004EDDE2 /* WhiteBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteBorderButton.swift; sourceTree = "<group>"; };
+		07FBEA981F535439004EDDE2 /* WhiteBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteBorderButton.swift; path = "Mac Bul!/WhiteBorderButton.swift"; sourceTree = "<group>"; };
 		2A6D7E5DA27DD05E016F1EC7 /* Pods-Mac Bul!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac Bul!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mac Bul!/Pods-Mac Bul!.release.xcconfig"; sourceTree = "<group>"; };
 		77C6734B5A465FB4234E417E /* Pods_Mac_Bul_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mac_Bul_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8DFFC7274401F375F924F5 /* Pods-Mac Bul!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac Bul!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mac Bul!/Pods-Mac Bul!.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07FABD041F54634500B279AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */,
+				07FBEA851F533550004EDDE2 /* TextFieldWithInsets.swift */,
+				07FBEA981F535439004EDDE2 /* WhiteBorderButton.swift */,
+				07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */,
+				07609D5B1F5474F3003D6358 /* CustomSlider.swift */,
+				07609D611F54F959003D6358 /* SearchTextField.swift */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		07FBEA5B1F531DDE004EDDE2 = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +117,9 @@
 				07FBEA8E1F53405A004EDDE2 /* Modal */,
 				07FBEA7C1F533448004EDDE2 /* View */,
 				07FBEA871F533C01004EDDE2 /* Controller */,
-				07FBEA7B1F532FC3004EDDE2 /* SupportingFiles */,
 				07FBEA6B1F531DDE004EDDE2 /* Main.storyboard */,
+				07FABD041F54634500B279AA /* Resources */,
+				07FBEA7B1F532FC3004EDDE2 /* SupportingFiles */,
 			);
 			path = "Mac Bul!";
 			sourceTree = "<group>";
@@ -99,10 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				07FBEA671F531DDE004EDDE2 /* AppDelegate.swift */,
-				07FBEA6E1F531DDE004EDDE2 /* Assets.xcassets */,
 				07FBEA701F531DDE004EDDE2 /* LaunchScreen.storyboard */,
 				07FBEA731F531DDE004EDDE2 /* Info.plist */,
 				07FBEA791F531E04004EDDE2 /* GoogleService-Info.plist */,
+				07609D5D1F547F99003D6358 /* Media.xcassets */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -110,10 +139,7 @@
 		07FBEA7C1F533448004EDDE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */,
-				07FBEA851F533550004EDDE2 /* TextFieldWithInsets.swift */,
-				07FBEA981F535439004EDDE2 /* WhiteBorderButton.swift */,
-				07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */,
+				07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -127,6 +153,8 @@
 				078FE8911F535D330036D722 /* BasketballMainVC.swift */,
 				07C56C711F53788F001D1E88 /* onboardingVC.swift */,
 				07C56C731F53AC4F001D1E88 /* TakımKurVC.swift */,
+				07FABD021F54610B00B279AA /* EslesmeArayanTakımlarVC.swift */,
+				071D393D1F55AF850074CF1F /* TeamChatVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -134,6 +162,8 @@
 		07FBEA8E1F53405A004EDDE2 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				07609D591F5467BD003D6358 /* BasketballTeam.swift */,
+				07609D5F1F54EBE3003D6358 /* TableViewController.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -229,7 +259,7 @@
 			files = (
 				07FBEA7A1F531E04004EDDE2 /* GoogleService-Info.plist in Resources */,
 				07FBEA721F531DDE004EDDE2 /* LaunchScreen.storyboard in Resources */,
-				07FBEA6F1F531DDE004EDDE2 /* Assets.xcassets in Resources */,
+				07609D5E1F547F99003D6358 /* Media.xcassets in Resources */,
 				07FBEA6D1F531DDE004EDDE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,14 +330,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FBEA8D1F533C9A004EDDE2 /* HesapOlusturVC.swift in Sources */,
+				07609D5C1F5474F3003D6358 /* CustomSlider.swift in Sources */,
 				07C56C721F53788F001D1E88 /* onboardingVC.swift in Sources */,
+				071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */,
 				07FBEA931F534083004EDDE2 /* DatabaseService.swift in Sources */,
 				07FBEA971F534A16004EDDE2 /* SecimVC.swift in Sources */,
 				07C56C701F536F15001D1E88 /* ViewWithWhiteBorder.swift in Sources */,
 				07C56C741F53AC4F001D1E88 /* TakımKurVC.swift in Sources */,
+				07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */,
 				07FBEA991F535439004EDDE2 /* WhiteBorderButton.swift in Sources */,
+				07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */,
+				07609D621F54F959003D6358 /* SearchTextField.swift in Sources */,
 				078FE8921F535D330036D722 /* BasketballMainVC.swift in Sources */,
+				07FABD031F54610B00B279AA /* EslesmeArayanTakımlarVC.swift in Sources */,
 				07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */,
+				07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */,
 				07FBEA8B1F533C36004EDDE2 /* HesabaGirVC.swift in Sources */,
 				07FBEA911F534073004EDDE2 /* AuthService.swift in Sources */,
 				07FBEA801F53346A004EDDE2 /* RoundedView.swift in Sources */,

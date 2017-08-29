@@ -15,6 +15,9 @@ class BasketballMainVC: UIViewController {
     @IBOutlet weak var kendineTakımYadaRakipBulLabel: UILabel!
     @IBOutlet weak var hadiBaslıyalımButton: WhiteBorderButton!
     @IBOutlet weak var bgImage: UIImageView!
+    @IBOutlet weak var takımınHazırView: ViewWithWhiteBorder!
+    @IBOutlet weak var eşleşmeArayanTakımlarView: ViewWithWhiteBorder!
+    @IBOutlet weak var takımlarHazırAdameksikView: WhiteBorderButton!
     
     
     
@@ -22,26 +25,34 @@ class BasketballMainVC: UIViewController {
         super.viewDidLoad()
         
         sehrindeRakipBulMucadeleyeBaslaLabel.alpha = 0
-        kendineTakımYadaRakipBulLabel.alpha = 0
         hadiBaslıyalımButton.alpha = 0
-        
+        takımınHazırView.transform = CGAffineTransform(translationX: 0, y: -300)
+        eşleşmeArayanTakımlarView.transform = CGAffineTransform(translationX: 0, y: -410)
+        takımlarHazırAdameksikView.transform = CGAffineTransform(translationX: 0, y: -550)
        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.2, animations: {
-                self.sehrindeRakipBulMucadeleyeBaslaLabel.alpha = 1
-        }) { (true) in
-            UIView.animate(withDuration: 0.4, animations: {
-                self.kendineTakımYadaRakipBulLabel.alpha = 1
+       UIView.animate(withDuration: 0.3, animations: { 
+        self.sehrindeRakipBulMucadeleyeBaslaLabel.alpha = 1
+       }) { (true) in
+        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveLinear, animations: {
+            self.takımınHazırView.transform = .identity
+        }, completion: { (true) in
+            UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                self.eşleşmeArayanTakımlarView.transform = .identity
             }, completion: { (true) in
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.hadiBaslıyalımButton.alpha = 1
-                }, completion: nil)
+                UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                    self.takımlarHazırAdameksikView.transform = .identity
+                }, completion: { (true) in
+                    UIView.animate(withDuration: 1, animations: {
+                        self.hadiBaslıyalımButton.alpha = 1
+                    }, completion: nil)
+                })
             })
-            
+        })
         }
     }
     

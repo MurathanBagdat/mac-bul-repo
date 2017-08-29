@@ -126,6 +126,69 @@ class DatabaseService {
             completion(basketballTeamArray, true)
         })
     }
+    
+    func createTeamMessage( teamkey : String , content : String , timestamp : String , senderID : String , completion : @escaping (_ succes : Bool)->()){
+        
+        REF_BASKETBALLTEAM.observeSingleEvent(of: .value, with: { (basketballTeamsSnapshot) in
+            
+            guard let basketballTeamsSnapshot = basketballTeamsSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for basketballTeam in basketballTeamsSnapshot{
+                
+                if basketballTeam.key == teamkey{
+                    
+                    self.getUsername(byUID: senderID, completion: { (username, succes) in
+                        if succes{
+                            let messageData : [String : String] = ["content" : content , "timestamp" : timestamp , "senderID" : senderID , "username" : username ]
+                            
+                              self.REF_BASKETBALLTEAM.child(basketballTeam.key).child("messages").childByAutoId().updateChildValues(messageData)
+                        }
+                    })
+                }
+            }
+            completion(true)
+        })
+    }
+    
+    func getTeamMessages(forTeamKey teamKey : String , completion : @escaping (_ messages : [BasketballTeamMessage], _ succes : Bool)->()){
+        var messageArray = [BasketballTeamMessage]()
+        
+        REF_BASKETBALLTEAM.child(teamKey).child("messages").observeSingleEvent(of: .value, with: { (messagesSnapshot) in
+            
+            guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for message in messagesSnapshot {
+                
+                let content = message.childSnapshot(forPath: "content").value as! String
+                let senderID = message.childSnapshot(forPath: "senderID").value as! String
+                let timestamp = message.childSnapshot(forPath: "timestamp").value as! String
+                let username = message.childSnapshot(forPath: "username").value as! String
+                let messageKey = message.key
+                
+                let message = BasketballTeamMessage(content: content, messageID: messageKey, senderID: senderID, timestamp: timestamp, teamKey: teamKey, senderUsername: username)
+                messageArray.append(message)
+            }
+            completion(messageArray, true)
+        })
+    }
+    
+    func getUserName(forUID uid : String , completion : @escaping (_ username : String, _ succes : Bool )->()){
+        var username = String()
+        
+        REF_USERS.observeSingleEvent(of: .value, with: { (usersSnapshot) in
+            guard let usersSnapshot = usersSnapshot.children.allObjects as? [DataSnapshot] else {return}
+    
+            for user in usersSnapshot{
+                if user.key == uid{
+                     let returnedUsername = user.childSnapshot(forPath: "username").value as! String
+                    username = returnedUsername
+                }
+            }
+            completion(username, true)
+        })
+        
+        
+    }
 }
 
 

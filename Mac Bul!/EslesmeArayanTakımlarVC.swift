@@ -22,6 +22,7 @@ class EslesmeArayanTak_mlarVC: UIViewController {
     
     var teamsArray = [BasketballTeam]()
     var isFirstTime = true
+    var selectedTeam = BasketballTeam()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class EslesmeArayanTak_mlarVC: UIViewController {
     }
     @IBAction func logoutButtonPrsd(_ sender: UIButton) {
         try? Auth.auth().signOut()
+        let hesapOluştırVC = storyboard?.instantiateViewController(withIdentifier: "HesapOlusturVC") as! HesapOlusturVC
+        present(hesapOluştırVC, animated: true, completion: nil)
     }
     @IBAction func editingChanged(_ sender: SearchTextField) {
         
@@ -106,6 +109,15 @@ extension EslesmeArayanTak_mlarVC : UITableViewDelegate , UITableViewDataSource{
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedTeam = teamsArray[indexPath.row]
+        let teamChatVC = storyboard?.instantiateViewController(withIdentifier: "TeamChatVC") as! TeamChatVC
+        teamChatVC.initTeam(team: selectedTeam)
+        present(teamChatVC, animated: true, completion: nil)
+    
     }
 }
 

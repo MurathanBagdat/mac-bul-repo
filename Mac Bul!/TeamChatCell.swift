@@ -28,7 +28,7 @@ class TeamChatCell: UITableViewCell {
 
     
     
-    func configureCell(message : BasketballTeamMessage){
+    func configureCell(message : BasketballTeamMessage, kurucuUID : String){
         
         if Auth.auth().currentUser?.uid == message.senderID{
             self.senderView.isHidden = false
@@ -40,13 +40,26 @@ class TeamChatCell: UITableViewCell {
             self.senderTime.text = message.timestamp
             
         }else{
-            self.alınanView.isHidden = false
-            self.senderView.isHidden = true
-            self.senderTime.text = ""
-            self.senderLabel.text = ""
-            self.alınanLabel.text = message.content
-            self.alınanTime.text = message.timestamp
-            self.alınanKullanıcıAdı.text = message.senderUsername
+            
+            if message.senderID == kurucuUID {
+                self.alınanView.isHidden = false
+                self.senderView.isHidden = true
+                self.senderTime.text = ""
+                self.senderLabel.text = ""
+                self.alınanLabel.text = message.content
+                self.alınanTime.text = message.timestamp
+                self.alınanKullanıcıAdı.text = "Takım Yetkilisi: \(message.senderUsername!)"
+            }else{
+                
+                self.alınanView.isHidden = false
+                self.senderView.isHidden = true
+                self.senderTime.text = ""
+                self.senderLabel.text = ""
+                self.alınanLabel.text = message.content
+                self.alınanTime.text = message.timestamp
+                self.alınanKullanıcıAdı.text = message.senderUsername!
+            }
+          
         }
         
         

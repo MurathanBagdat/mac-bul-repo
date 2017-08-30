@@ -117,6 +117,7 @@ extension EslesmeArayanTak_mlarVC : UITableViewDelegate , UITableViewDataSource{
         selectedTeam = teamsArray[indexPath.row]
         let teamChatVC = storyboard?.instantiateViewController(withIdentifier: "TeamChatVC") as! TeamChatVC
         teamChatVC.initTeam(team: selectedTeam)
+        teamChatVC.takımKurucuUID = selectedTeam.kurucuUID
         present(teamChatVC, animated: true, completion: nil)
     
     }

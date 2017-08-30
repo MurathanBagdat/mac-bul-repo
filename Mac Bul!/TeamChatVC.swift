@@ -38,6 +38,8 @@ class TeamChatVC: UIViewController {
     //Variables
     var team : BasketballTeam?
     var messages : [BasketballTeamMessage] = [BasketballTeamMessage(content: "Henüz hiç mesaj yok!", messageID: "", senderID: "", timestamp: "", teamKey: "", senderUsername : "")]
+    var takımKurucuUID : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +109,7 @@ class TeamChatVC: UIViewController {
             })
         })
         //TAKIM MESAJLARINI ÇEK##########
+        
     }
     
     
@@ -174,7 +177,7 @@ extension TeamChatVC : UITableViewDelegate , UITableViewDataSource {
         
         let message = messages[indexPath.row]
         
-        cell.configureCell(message: message)
+        cell.configureCell(message: message, kurucuUID: self.takımKurucuUID!)
         
         return cell
         

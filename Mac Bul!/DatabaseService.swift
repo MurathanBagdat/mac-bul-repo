@@ -232,8 +232,26 @@ class DatabaseService {
         let color = UIColor(red: rCGFloat, green: gCGFloat, blue: bCGFloat, alpha: aCGFloat)
         
         return color
+    }
+    
+    func getTakımKurucuUID(forTeamKey teamKey : String , completion: @escaping (_ kurucuUID : String)->()){
+        
+        REF_BASKETBALLTEAM.observeSingleEvent(of: .value, with: { (basketballTeamsSnapshot) in
+            guard let basketballTeamsSnapshot = basketballTeamsSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for basketballTeam in basketballTeamsSnapshot{
+                if basketballTeam.key == teamKey{
+                    
+                        let kurucUID = basketballTeam.childSnapshot(forPath: "TakımKurucuUID").value as! String!
+                    completion(kurucUID!)
+                }
+            }
+            
+        })
+        
         
     }
+    
 
 }
 

@@ -29,5 +29,8 @@ struct BasketballTeam {
     public private(set) var takımSeviyesi : String!
     public private(set) var lokasyonlar : String!
     public private(set) var takımKey : String?
+    public private(set) var takımYasOrtalaması : String!
+    public private(set) var takımLogoIsmi : String!
+    public private(set) var takımLogoRenk : String!
     
 }

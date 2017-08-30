@@ -33,6 +33,7 @@ class TeamChatVC: UIViewController {
     }
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var takimIsmiLabel: UILabel!
+    @IBOutlet weak var takimLogoImage: RoundedImage!
     
     //Variables
     var team : BasketballTeam?
@@ -77,19 +78,23 @@ class TeamChatVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        guard let takımIsmi = team?.takimIsmi else {dismiss(animated: true, completion:  nil)
+        guard let team  =  team else {
+         dismiss(animated: true, completion: nil)
+            return
+        }
+        guard let takımIsmi = team.takimIsmi else {dismiss(animated: true, completion:  nil)
             return}
         
-        guard let takımKey = team?.takımKey else {
-            dismiss(animated: true, completion: nil)
-            return}
-        
+        let takımKey = team.takımKey
+        self.takimLogoImage.image = UIImage(named: team.takımLogoIsmi)
+        self.takimLogoImage.backgroundColor = DatabaseService.instance.returnUIColorFromString(component: team.takımLogoRenk)
         self.takimIsmiLabel.text = takımIsmi
         
-        DatabaseService.instance.REF_BASKETBALLTEAM.child(takımKey).child("messages").observe(.value, with: { (messagesSnapshot) in
+        
+        //TAKIM MESAJLARINI ÇEK##########
+        DatabaseService.instance.REF_BASKETBALLTEAM.child(takımKey!).child("messages").observe(.value, with: { (messagesSnapshot) in
             
-            DatabaseService.instance.getTeamMessages(forTeamKey: takımKey, completion: { (returnedBasketballMessages, succes) in
+            DatabaseService.instance.getTeamMessages(forTeamKey: takımKey!, completion: { (returnedBasketballMessages, succes) in
                 if succes{
                     
                     if returnedBasketballMessages.count == 0 {
@@ -101,7 +106,7 @@ class TeamChatVC: UIViewController {
                 }
             })
         })
-        
+        //TAKIM MESAJLARINI ÇEK##########
     }
     
     

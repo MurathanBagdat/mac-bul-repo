@@ -40,6 +40,7 @@ class EslesmeArayanTak_mlarVC: UIViewController {
     }
     @IBAction func logoutButtonPrsd(_ sender: UIButton) {
         try? Auth.auth().signOut()
+      //  DatabaseService.instance.teamLogoName = "image7"
         let hesapOluştırVC = storyboard?.instantiateViewController(withIdentifier: "HesapOlusturVC") as! HesapOlusturVC
         present(hesapOluştırVC, animated: true, completion: nil)
     }

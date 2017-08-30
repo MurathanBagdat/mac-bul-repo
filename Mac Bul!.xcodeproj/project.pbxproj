@@ -16,6 +16,10 @@
 		07609D5E1F547F99003D6358 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07609D5D1F547F99003D6358 /* Media.xcassets */; };
 		07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D5F1F54EBE3003D6358 /* TableViewController.swift */; };
 		07609D621F54F959003D6358 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D611F54F959003D6358 /* SearchTextField.swift */; };
+		0785ECA31F5619D400B21812 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ECA21F5619D400B21812 /* RoundedImage.swift */; };
+		0785ECA61F5623AB00B21812 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ECA41F5623AA00B21812 /* AvatarPickerVC.swift */; };
+		0785ECAA1F56295900B21812 /* AvatarPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ECA91F56295900B21812 /* AvatarPickerCell.swift */; };
+		0785ECAC1F562C0A00B21812 /* ImageViewWithCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785ECAB1F562C0A00B21812 /* ImageViewWithCornerRadius.swift */; };
 		078FE8921F535D330036D722 /* BasketballMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FE8911F535D330036D722 /* BasketballMainVC.swift */; };
 		07A4109B1F5604430043A1D3 /* BorderViewWithCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4109A1F5604430043A1D3 /* BorderViewWithCornerRadius.swift */; };
 		07C56C701F536F15001D1E88 /* ViewWithWhiteBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */; };
@@ -47,6 +51,10 @@
 		07609D5D1F547F99003D6358 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		07609D5F1F54EBE3003D6358 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		07609D611F54F959003D6358 /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		0785ECA21F5619D400B21812 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		0785ECA41F5623AA00B21812 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		0785ECA91F56295900B21812 /* AvatarPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarPickerCell.swift; sourceTree = "<group>"; };
+		0785ECAB1F562C0A00B21812 /* ImageViewWithCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewWithCornerRadius.swift; sourceTree = "<group>"; };
 		078FE8911F535D330036D722 /* BasketballMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballMainVC.swift; sourceTree = "<group>"; };
 		07A4109A1F5604430043A1D3 /* BorderViewWithCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderViewWithCornerRadius.swift; sourceTree = "<group>"; };
 		07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewWithWhiteBorder.swift; path = "Mac Bul!/ViewWithWhiteBorder.swift"; sourceTree = "<group>"; };
@@ -84,6 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0785ECA81F5623B100B21812 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
 		07FABD041F54634500B279AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +109,8 @@
 				07609D5B1F5474F3003D6358 /* CustomSlider.swift */,
 				07609D611F54F959003D6358 /* SearchTextField.swift */,
 				07A4109A1F5604430043A1D3 /* BorderViewWithCornerRadius.swift */,
+				0785ECA21F5619D400B21812 /* RoundedImage.swift */,
+				0785ECAB1F562C0A00B21812 /* ImageViewWithCornerRadius.swift */,
 			);
 			name = Resources;
 			path = ..;
@@ -120,6 +137,7 @@
 		07FBEA661F531DDE004EDDE2 /* Mac Bul! */ = {
 			isa = PBXGroup;
 			children = (
+				0785ECA81F5623B100B21812 /* Xibs */,
 				07FBEA8F1F534062004EDDE2 /* Services */,
 				07FBEA8E1F53405A004EDDE2 /* Modal */,
 				07FBEA7C1F533448004EDDE2 /* View */,
@@ -148,6 +166,7 @@
 			children = (
 				07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */,
 				071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */,
+				0785ECA91F56295900B21812 /* AvatarPickerCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -163,6 +182,7 @@
 				07C56C731F53AC4F001D1E88 /* TakımKurVC.swift */,
 				07FABD021F54610B00B279AA /* EslesmeArayanTakımlarVC.swift */,
 				071D393D1F55AF850074CF1F /* TeamChatVC.swift */,
+				0785ECA41F5623AA00B21812 /* AvatarPickerVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -339,6 +359,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FBEA8D1F533C9A004EDDE2 /* HesapOlusturVC.swift in Sources */,
+				0785ECAC1F562C0A00B21812 /* ImageViewWithCornerRadius.swift in Sources */,
+				0785ECA61F5623AB00B21812 /* AvatarPickerVC.swift in Sources */,
 				07609D5C1F5474F3003D6358 /* CustomSlider.swift in Sources */,
 				07C56C721F53788F001D1E88 /* onboardingVC.swift in Sources */,
 				07A4109B1F5604430043A1D3 /* BorderViewWithCornerRadius.swift in Sources */,
@@ -347,6 +369,7 @@
 				07FBEA971F534A16004EDDE2 /* SecimVC.swift in Sources */,
 				07C56C701F536F15001D1E88 /* ViewWithWhiteBorder.swift in Sources */,
 				07C56C741F53AC4F001D1E88 /* TakımKurVC.swift in Sources */,
+				0785ECA31F5619D400B21812 /* RoundedImage.swift in Sources */,
 				07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */,
 				07FBEA991F535439004EDDE2 /* WhiteBorderButton.swift in Sources */,
 				07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */,
@@ -356,6 +379,7 @@
 				07FABD031F54610B00B279AA /* EslesmeArayanTakımlarVC.swift in Sources */,
 				07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */,
 				07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */,
+				0785ECAA1F56295900B21812 /* AvatarPickerCell.swift in Sources */,
 				07FBEA8B1F533C36004EDDE2 /* HesabaGirVC.swift in Sources */,
 				071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */,
 				07FBEA911F534073004EDDE2 /* AuthService.swift in Sources */,

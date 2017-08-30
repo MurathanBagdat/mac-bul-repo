@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+var takimLogosuIsmi = "image7"
 class Tak_mKurVC: UIViewController {
     
     //Outlets
@@ -21,7 +22,13 @@ class Tak_mKurVC: UIViewController {
     @IBOutlet weak var sahaLokasyonuTextFiled: UITextField!
     @IBOutlet weak var aciklamaTextView: UITextView!
     @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var avatarImageView: RoundedImage!
+    @IBOutlet weak var yasSlider: UISlider!
+
    
+    //Variables
+    
+    var takimLogosuRengi = "[0.87, 0.87, 0.87, 1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +38,49 @@ class Tak_mKurVC: UIViewController {
         datePicker.minimumDate = Date()
         datePickerForEndDate.minimumDate = Date().addingTimeInterval(7200)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.avatarImageView.image = UIImage(named: takimLogosuIsmi)
+    }
+    
 
     @IBAction func DatepickerDate(_ sender: UIDatePicker) {
         datePickerForEndDate.setDate(datePicker.date.addingTimeInterval(7200), animated: true)
         datePickerForEndDate.minimumDate = datePicker.date.addingTimeInterval(7200)
 
-  
     }
+    
+    @IBAction func yasSliderChanged(_ sender: UISlider) {
+        yasSlider.value = roundf(yasSlider.value)
+    }
+    
     @IBAction func sliderChanged(_ sender: CustomSlider) {
-        
         slider.value = roundf(slider.value)
     }
+    
+    @IBAction func avatarPickerButtonPrsd(_ sender: UIButton) {
+        let avatarPickerVC = storyboard?.instantiateViewController(withIdentifier: "AvatarPickerVC") as! AvatarPickerVC
+        present(avatarPickerVC, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func arkaPlanRenkButtonPrsd(_ sender: Any) {
+    
+        let r  = CGFloat(arc4random_uniform(255)) / 255
+        let g  = CGFloat(arc4random_uniform(255)) / 255
+        let b  = CGFloat(arc4random_uniform(255)) / 255
+        
+        self.takimLogosuRengi = "[\(r), \(g), \(b), 1]"
+        
+        
+        UIView.animate(withDuration: 0.2) {
+            self.avatarImageView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        }
+    }
+    
+    
+    
     @IBAction func doneButtonPrsd(_ sender: Any) {
   
         guard let takımSayısı = takiminKacKisiTextField.text, takiminKacKisiTextField.text != "" else {
@@ -81,7 +120,22 @@ class Tak_mKurVC: UIViewController {
             case 3 :
                 return "Uzman"
             default:
-                return "Uzman"
+                return "Orta"
+            }
+        }
+        
+        var yaş : String{
+            switch yasSlider.value{
+            case 1 :
+                return "-18"
+            case 2 :
+                return "18-25"
+            case 3 :
+                return "25-35"
+            case 4:
+                return "35+"
+            default:
+                return "18-25"
             }
         }
         guard let sahaLokasyonu = sahaLokasyonuTextFiled.text, sahaLokasyonuTextFiled.text != "" else {
@@ -114,7 +168,8 @@ class Tak_mKurVC: UIViewController {
         }
         DatabaseService.instance.getUsername(byUID: (Auth.auth().currentUser?.uid)!) { (username, succes) in
             if succes{
-               let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye,lokasyonlar: sahaLokasyonu , takımKey : nil)
+             
+                let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye, lokasyonlar: sahaLokasyonu, takımKey: nil, takımYasOrtalaması: yaş, takımLogoIsmi: takimLogosuIsmi, takımLogoRenk: self.takimLogosuRengi)
                 
                 DatabaseService.instance.createBasketballTeam(withBasketballTeam: basketballTakımı) { (succes) in
                     if succes{

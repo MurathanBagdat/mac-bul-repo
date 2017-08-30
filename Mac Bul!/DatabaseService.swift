@@ -26,6 +26,7 @@ class DatabaseService {
     var REF_BASKETBALLTEAM : DatabaseReference{
         return _REF_BASKETBALL
     }
+
     
     func createUserInDB(withUID uid : String, userData : Dictionary<String, Any> , completion : (_ succes: Bool)->()){
         
@@ -52,7 +53,7 @@ class DatabaseService {
     
     func createBasketballTeam(withBasketballTeam basketballTeam : BasketballTeam , completion : @escaping (_ succes: Bool)->()) {
         
-        REF_BASKETBALLTEAM.childByAutoId().updateChildValues(["Takımİsmi" : basketballTeam.takimIsmi , "TakımKurucuUID" : basketballTeam.kurucuUID , "TakımSeviyesi" : basketballTeam.takımSeviyesi, "TakımSayısı" : basketballTeam.takimSayisi , "Sehir" : basketballTeam.sehir, "Lokasyonlar" : basketballTeam.lokasyonlar, "KurucuKullanıcıAdı" : basketballTeam.kurucuKullanıcıAdı, "BaslangıçTarihi" : basketballTeam.baslangicTarih, "BitişTarihi" : basketballTeam.bitisTarihi, "EkstraAçıklamalar" : basketballTeam.aciklama])
+        REF_BASKETBALLTEAM.childByAutoId().updateChildValues(["Takımİsmi" : basketballTeam.takimIsmi , "TakımKurucuUID" : basketballTeam.kurucuUID , "TakımSeviyesi" : basketballTeam.takımSeviyesi, "TakımSayısı" : basketballTeam.takimSayisi , "Sehir" : basketballTeam.sehir, "Lokasyonlar" : basketballTeam.lokasyonlar, "KurucuKullanıcıAdı" : basketballTeam.kurucuKullanıcıAdı, "BaslangıçTarihi" : basketballTeam.baslangicTarih, "BitişTarihi" : basketballTeam.bitisTarihi, "EkstraAçıklamalar" : basketballTeam.aciklama, "yasOrt" : basketballTeam.takımYasOrtalaması , "logoIsmi" : basketballTeam.takımLogoIsmi, "logoRengi" : basketballTeam.takımLogoRenk ])
         
         completion(true)
     }
@@ -78,10 +79,12 @@ class DatabaseService {
                 let TakımSeviyesi = returnedBasketballTeam.childSnapshot(forPath: "TakımSeviyesi").value as! String
                 let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
                 let takımKey = returnedBasketballTeam.key
+                let yasOrt = returnedBasketballTeam.childSnapshot(forPath: "yasOrt").value as! String
+                let logoIsmi = returnedBasketballTeam.childSnapshot(forPath: "logoIsmi").value as! String
+                let logoRenk = returnedBasketballTeam.childSnapshot(forPath: "logoRengi").value as! String
                 
-                
-                let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey)
-                
+                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk)
+              
                 basketballTeamArray.append(basketballTeam)
             }
             
@@ -117,9 +120,12 @@ class DatabaseService {
                     let TakımSeviyesi = returnedBasketballTeam.childSnapshot(forPath: "TakımSeviyesi").value as! String
                     let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
                     let takımKey = returnedBasketballTeam.key
-            
-                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey)
-        
+                    let yasOrt = returnedBasketballTeam.childSnapshot(forPath: "yasOrt").value as! String
+                    let logoIsmi = returnedBasketballTeam.childSnapshot(forPath: "logoIsmi").value as! String
+                    let logoRenk = returnedBasketballTeam.childSnapshot(forPath: "logoRengi").value as! String
+                    
+                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk)
+                    
                     basketballTeamArray.append(basketballTeam)
                 }
             }
@@ -186,9 +192,49 @@ class DatabaseService {
             }
             completion(username, true)
         })
+    }
+    
+    func returnUIColorFromString(component: String) -> UIColor {
+        //"[0.5, 0.5, 0.5, 1]"
         
+        let scanner = Scanner(string: component)
+        let skipped = CharacterSet(charactersIn: "[], ")
+        let upToComma = CharacterSet(charactersIn: ",")
+        // let upTo = CharacterSet(charactersIn : "]")
+        
+        scanner.charactersToBeSkipped = skipped
+        
+        var r, g, b, a : NSString?
+        
+        scanner.scanUpToCharacters(from: upToComma, into: &r)
+        
+        scanner.scanUpToCharacters(from: upToComma, into: &g)
+        
+        scanner.scanUpToCharacters(from: upToComma, into: &b)
+        
+        scanner.scanUpToCharacters(from: upToComma , into: &a)
+        
+        
+        
+        guard let rUnwrapped = r else {return UIColor.lightGray}
+        
+        guard let gUnwrapped = g else {return UIColor.lightGray}
+        
+        guard let bUnwrapped = b else {return UIColor.lightGray}
+        
+        guard let aUnwrapped = a else {return UIColor.lightGray}
+        
+        let rCGFloat = CGFloat(rUnwrapped.doubleValue)
+        let gCGFloat = CGFloat(gUnwrapped.doubleValue)
+        let bCGFloat = CGFloat(bUnwrapped.doubleValue)
+        let aCGFloat = CGFloat(aUnwrapped.doubleValue)
+        
+        let color = UIColor(red: rCGFloat, green: gCGFloat, blue: bCGFloat, alpha: aCGFloat)
+        
+        return color
         
     }
+
 }
 
 

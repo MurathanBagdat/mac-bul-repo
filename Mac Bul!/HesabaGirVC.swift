@@ -43,6 +43,8 @@ class HesabaGirVC: UIViewController {
     @IBAction func closeButtonPrsd(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

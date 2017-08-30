@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-var takimLogosuIsmi = "image7"
+
 class Tak_mKurVC: UIViewController {
     
     //Outlets
@@ -27,7 +27,7 @@ class Tak_mKurVC: UIViewController {
 
    
     //Variables
-    
+    var takimLogosuIsmi = "image7"
     var takimLogosuRengi = "[0.87, 0.87, 0.87, 1]"
     
     override func viewDidLoad() {
@@ -169,7 +169,7 @@ class Tak_mKurVC: UIViewController {
         DatabaseService.instance.getUsername(byUID: (Auth.auth().currentUser?.uid)!) { (username, succes) in
             if succes{
              
-                let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye, lokasyonlar: sahaLokasyonu, takımKey: nil, takımYasOrtalaması: yaş, takımLogoIsmi: takimLogosuIsmi, takımLogoRenk: self.takimLogosuRengi)
+                let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye, lokasyonlar: sahaLokasyonu, takımKey: nil, takımYasOrtalaması: yaş, takımLogoIsmi: self.takimLogosuIsmi, takımLogoRenk: self.takimLogosuRengi)
                 
                 DatabaseService.instance.createBasketballTeam(withBasketballTeam: basketballTakımı) { (succes) in
                     if succes{
@@ -179,6 +179,7 @@ class Tak_mKurVC: UIViewController {
             }
         }
     }
+    
 }
 
 extension Tak_mKurVC{
@@ -215,6 +216,9 @@ extension Tak_mKurVC{
         let contentInsets = UIEdgeInsets.zero
         scroll.contentInset = contentInsets
         scroll.scrollIndicatorInsets = contentInsets
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 extension Tak_mKurVC : UITextViewDelegate{

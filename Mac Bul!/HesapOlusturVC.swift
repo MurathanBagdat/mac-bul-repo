@@ -51,6 +51,8 @@ class HesapOlusturVC: UIViewController {
     @IBAction func zatenHesabımVarButtonPrsd(_ sender: UIButton) {
         performSegue(withIdentifier: "toHesabaGirVC", sender: nil)
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

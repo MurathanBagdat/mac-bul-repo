@@ -21,7 +21,12 @@ class TeamChatVC: UIViewController {
     }
 
     @IBOutlet weak var messageTextField: TextFieldWithInsets!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            let tab = UITapGestureRecognizer(target: self, action: #selector(TeamChatVC.dismissTheKeyboard))
+            tableView.addGestureRecognizer(tab)
+        }
+    }
     @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var canlıSohbetView: UIView!{
@@ -160,6 +165,9 @@ class TeamChatVC: UIViewController {
             tableView.scrollToRow(at: indexPath, at: .none, animated: false)
         }
     }
+    func dismissTheKeyboard(){
+        messageTextField.resignFirstResponder()
+    }
     
 }
 
@@ -209,7 +217,11 @@ extension TeamChatVC {
             self.scrolDownTheTableView()
         }, completion: nil)
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 

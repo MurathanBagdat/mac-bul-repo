@@ -107,6 +107,7 @@ class DatabaseService {
                
                 let sehir = returnedBasketballTeam.childSnapshot(forPath: "Sehir").value as! String
                 let lowerSehir = sehir.lowercased(with: Locale(identifier: "tr_TR"))
+                
                 if lowerSehir.contains(query){
                     
                     let kurucuUID = returnedBasketballTeam.childSnapshot(forPath: "TakımKurucuUID").value as! String
@@ -128,6 +129,7 @@ class DatabaseService {
                     
                     basketballTeamArray.append(basketballTeam)
                 }
+                
             }
             completion(basketballTeamArray, true)
         })

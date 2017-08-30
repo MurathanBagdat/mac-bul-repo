@@ -14,6 +14,7 @@ class AvatarPickerVC: UIViewController {
     
     
     var images = [UIImage]()
+    var seçilenLogo = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +75,18 @@ extension AvatarPickerVC : UICollectionViewDelegate , UICollectionViewDataSource
         
         let selectedImageName = "image\(indexPath.item)"
         
-        takimLogosuIsmi = selectedImageName
-        
-        dismiss(animated: true, completion: nil)
+        self.seçilenLogo = selectedImageName
+        performSegue(withIdentifier: "toTakimKurVC", sender: nil)
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let takimKurVC = segue.destination as! Tak_mKurVC
+        
+        if segue.identifier == "toTakimKurVC" {
+            
+            takimKurVC.takimLogosuIsmi = self.seçilenLogo
+        }
+    }
 }
 

@@ -19,6 +19,8 @@ class EslesmeArayanTakimCell: UITableViewCell {
     @IBOutlet weak var takımSayısıLabel: UILabel!
     @IBOutlet weak var sahaTercihiLabel: UILabel!
     @IBOutlet weak var bitisTarihiLabel: UILabel!
+    @IBOutlet weak var takımınYasOrtlaması: UILabel!
+    @IBOutlet weak var takımLogosu: UIImageView!
     
     
     override func awakeFromNib() {
@@ -39,6 +41,9 @@ class EslesmeArayanTakimCell: UITableViewCell {
         self.takımSayısıLabel.text = "TAKIM SAYISI : \(basketballTeam.takimSayisi!)"
         self.sahaTercihiLabel.text = "Saha Tercihi : \(basketballTeam.lokasyonlar!)"
         self.bitisTarihiLabel.text = "Bitiş : \(basketballTeam.bitisTarihi!)"
+        self.takımınYasOrtlaması.text = "TAKIM YAŞ ORT.: \(basketballTeam.takımYasOrtalaması!)"
+        self.takımLogosu.image = UIImage(named: basketballTeam.takımLogoIsmi!)
+        self.takımLogosu.backgroundColor = DatabaseService.instance.returnUIColorFromString(component: basketballTeam.takımLogoRenk)
     }
 
 }

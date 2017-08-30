@@ -760,28 +760,19 @@
                                     <constraint firstAttribute="trailing" secondItem="xxp-el-j2M" secondAttribute="trailing" id="zmS-PZ-r26"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Nj-lqJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Nj-lqJ">
                                 <rect key="frame" x="0.0" y="140" width="375" height="478"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eslesmeArayanTakımCell" rowHeight="215" id="cI0-PO-qIx" customClass="EslesmeArayanTakimCell" customModule="Mac_Bul_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="215"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eslesmeArayanTakımCell" rowHeight="222" id="cI0-PO-qIx" customClass="EslesmeArayanTakimCell" customModule="Mac_Bul_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="222"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cI0-PO-qIx" id="rbJ-pR-5od">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="222"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Takım ismi : Some TEAM!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayx-5e-v3b">
-                                                    <rect key="frame" x="23" y="8" width="245" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="29" id="w38-Uf-0VR"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVO-6A-U5j">
-                                                    <rect key="frame" x="23" y="133" width="333.5" height="24"/>
+                                                    <rect key="frame" x="23" y="139.5" width="333.5" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAKIM SAYISI :  6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-Z0-DbK">
                                                             <rect key="frame" x="0.0" y="0.0" width="134.5" height="24"/>
@@ -807,7 +798,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ŞEHİR : İstanbul, Etiler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-oz-eIu">
-                                                    <rect key="frame" x="23" y="109" width="344" height="24"/>
+                                                    <rect key="frame" x="23" y="115.5" width="344" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="77R-pE-ECg"/>
                                                     </constraints>
@@ -816,7 +807,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Başlangıç : 12 temmuz 2017 salı 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="CNB-by-blu">
-                                                    <rect key="frame" x="48" y="61" width="319" height="22"/>
+                                                    <rect key="frame" x="48" y="67.5" width="319" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="djp-e7-2cr"/>
                                                     </constraints>
@@ -825,13 +816,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Bitiş : 12 temmuz 2017 salı 14:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="CIl-UL-W0Z">
-                                                    <rect key="frame" x="48" y="82" width="319" height="22"/>
+                                                    <rect key="frame" x="48" y="88.5" width="319" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saha Tercihi : Dünyagöz'ün karşısı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="m7p-lN-y4g">
-                                                    <rect key="frame" x="23" y="155" width="344" height="24"/>
+                                                    <rect key="frame" x="23" y="161.5" width="344" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="7TR-QI-lxa"/>
                                                     </constraints>
@@ -840,7 +831,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mücadeleyi Kabul Ediyorsan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-kl-eNd">
-                                                    <rect key="frame" x="99" y="179" width="222" height="23.5"/>
+                                                    <rect key="frame" x="99" y="185.5" width="222" height="23.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23.5" id="F3d-bd-H2R"/>
                                                     </constraints>
@@ -849,7 +840,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bu tarihler arası oynayabiliriz!!:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MAJ-9y-JuX">
-                                                    <rect key="frame" x="23" y="39" width="297" height="24"/>
+                                                    <rect key="frame" x="23" y="46.5" width="297" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="qsQ-kU-EPG"/>
                                                     </constraints>
@@ -865,7 +856,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4e-LW-HpE">
-                                                    <rect key="frame" x="323" y="176" width="49" height="33"/>
+                                                    <rect key="frame" x="323" y="182.5" width="49" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="MWY-8e-aHl"/>
                                                         <constraint firstAttribute="height" constant="33" id="gei-0t-7t2"/>
@@ -873,31 +864,50 @@
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <state key="normal" image="comeImage3"/>
                                                 </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cOC-oz-Spg">
+                                                    <rect key="frame" x="23" y="2" width="342" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-Tx-n1i" customClass="RoundedImage" customModule="Mac_Bul_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="1v7-bB-p4t"/>
+                                                                <constraint firstAttribute="width" constant="40" id="fiD-SV-1uT"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Takım ismi : Some TEAM!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayx-5e-v3b">
+                                                            <rect key="frame" x="47" y="0.0" width="295" height="40"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="m7p-lN-y4g" firstAttribute="top" secondItem="hPP-oz-eIu" secondAttribute="bottom" constant="22" id="2k2-RJ-7zc"/>
-                                                <constraint firstItem="ayx-5e-v3b" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="15" id="2t0-aJ-x7U"/>
                                                 <constraint firstItem="m7p-lN-y4g" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="15" id="6lw-km-H6t"/>
+                                                <constraint firstItem="cOC-oz-Spg" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leading" constant="23" id="93g-eG-j6g"/>
+                                                <constraint firstAttribute="trailing" secondItem="cOC-oz-Spg" secondAttribute="trailing" constant="10" id="9j7-94-5sY"/>
                                                 <constraint firstItem="L4e-LW-HpE" firstAttribute="leading" secondItem="GoZ-kl-eNd" secondAttribute="trailing" constant="2" id="BE7-iH-KHU"/>
                                                 <constraint firstItem="hPP-oz-eIu" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="15" id="EWc-ob-Vrj"/>
+                                                <constraint firstItem="cOC-oz-Spg" firstAttribute="top" secondItem="rbJ-pR-5od" secondAttribute="top" constant="2" id="FrJ-Sq-n2P"/>
                                                 <constraint firstItem="L4e-LW-HpE" firstAttribute="top" secondItem="pVO-6A-U5j" secondAttribute="bottom" constant="19" id="JmZ-Ae-o6v"/>
                                                 <constraint firstItem="MAJ-9y-JuX" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="15" id="KGG-b2-wTL"/>
                                                 <constraint firstItem="m7p-lN-y4g" firstAttribute="trailing" secondItem="rbJ-pR-5od" secondAttribute="trailingMargin" id="PHC-hj-cRk"/>
+                                                <constraint firstItem="MAJ-9y-JuX" firstAttribute="top" secondItem="cOC-oz-Spg" secondAttribute="bottom" constant="4.5" id="WDy-Ec-kcY"/>
                                                 <constraint firstItem="pVO-6A-U5j" firstAttribute="top" secondItem="hPP-oz-eIu" secondAttribute="bottom" id="Xm2-Jm-j4l"/>
                                                 <constraint firstItem="CIl-UL-W0Z" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="40" id="Yc6-hu-ClQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="L4e-LW-HpE" secondAttribute="trailing" constant="3" id="cpB-iE-ugY"/>
                                                 <constraint firstItem="CNB-by-blu" firstAttribute="trailing" secondItem="rbJ-pR-5od" secondAttribute="trailingMargin" id="d8f-TG-uw3"/>
-                                                <constraint firstItem="CNB-by-blu" firstAttribute="top" secondItem="MAJ-9y-JuX" secondAttribute="bottom" constant="-2" id="dl9-Ay-eCQ"/>
+                                                <constraint firstItem="CNB-by-blu" firstAttribute="top" secondItem="MAJ-9y-JuX" secondAttribute="bottom" constant="-3" id="dl9-Ay-eCQ"/>
                                                 <constraint firstItem="pVO-6A-U5j" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="15" id="fPK-XU-lCU"/>
                                                 <constraint firstItem="hPP-oz-eIu" firstAttribute="trailing" secondItem="rbJ-pR-5od" secondAttribute="trailingMargin" id="iuI-Fj-G9c"/>
                                                 <constraint firstItem="CIl-UL-W0Z" firstAttribute="trailing" secondItem="rbJ-pR-5od" secondAttribute="trailingMargin" id="k4X-aN-Lzz"/>
                                                 <constraint firstAttribute="bottom" secondItem="L4e-LW-HpE" secondAttribute="bottom" constant="6" id="kmO-AG-ZWS"/>
-                                                <constraint firstItem="MAJ-9y-JuX" firstAttribute="top" secondItem="ayx-5e-v3b" secondAttribute="bottom" constant="2" id="pfZ-uz-M9c"/>
                                                 <constraint firstItem="GoZ-kl-eNd" firstAttribute="top" secondItem="m7p-lN-y4g" secondAttribute="bottom" id="sX3-xE-SyB"/>
                                                 <constraint firstItem="CNB-by-blu" firstAttribute="leading" secondItem="rbJ-pR-5od" secondAttribute="leadingMargin" constant="40" id="vXX-w5-unE"/>
                                                 <constraint firstItem="CIl-UL-W0Z" firstAttribute="top" secondItem="CNB-by-blu" secondAttribute="bottom" constant="-1" id="voy-wW-t7u"/>
                                                 <constraint firstItem="hPP-oz-eIu" firstAttribute="top" secondItem="CIl-UL-W0Z" secondAttribute="bottom" constant="5" id="w3M-Yk-UOW"/>
-                                                <constraint firstItem="ayx-5e-v3b" firstAttribute="top" secondItem="rbJ-pR-5od" secondAttribute="topMargin" id="xV6-Ca-JX6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.32281681365030673" colorSpace="calibratedRGB"/>
@@ -907,7 +917,9 @@
                                             <outlet property="sahaTercihiLabel" destination="m7p-lN-y4g" id="zJw-fG-nD2"/>
                                             <outlet property="sehirLabel" destination="hPP-oz-eIu" id="7h0-uL-GbX"/>
                                             <outlet property="takımIsmiLabel" destination="ayx-5e-v3b" id="b62-Ps-JaW"/>
+                                            <outlet property="takımLogosu" destination="KjL-Tx-n1i" id="i6h-DY-zvC"/>
                                             <outlet property="takımSayısıLabel" destination="Lff-Z0-DbK" id="TIF-cZ-RQ7"/>
+                                            <outlet property="takımınYasOrtlaması" destination="2iM-dJ-fRf" id="vQf-l4-Aej"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -940,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1g-0p-h3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="461"/>
+            <point key="canvasLocation" x="1708" y="458.32083958020991"/>
         </scene>
         <!--Team ChatVC-->
         <scene sceneID="icB-7b-Uel">
@@ -1308,7 +1320,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="mhI-A2-rSg" id="3IU-2X-E6l"/>
-                        <segue destination="y0y-ej-KyA" kind="show" identifier="backToTakımKurVC" id="NgQ-rP-UlV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IeF-pF-YHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1324,7 +1335,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5ht-iJ-DzS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="826-GZ-dkT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2151"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3V-3H-f7E">
@@ -1365,7 +1376,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBn-U1-WKy">
-                                <rect key="frame" x="0.0" y="70" width="375" height="2130"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="2081"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Takımın hazırsa kaydet lokasyonu şeç rakipler görsün" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="3Pw-7a-tvb">
                                         <rect key="frame" x="8" y="20" width="359" height="77"/>
@@ -1919,6 +1930,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hkF-Jy-K4B"/>
-        <segue reference="NgQ-rP-UlV"/>
     </inferredMetricsTieBreakers>
 </document>

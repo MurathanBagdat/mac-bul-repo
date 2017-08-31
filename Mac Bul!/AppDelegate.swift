@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        Database.database().isPersistenceEnabled = false
         
         if Auth.auth().currentUser == nil {
             

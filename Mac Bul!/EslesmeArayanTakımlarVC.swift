@@ -33,10 +33,14 @@ class EslesmeArayanTak_mlarVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        DatabaseService.instance.getBasketballTeamsFeed { (basketballTeamsArray) in
-            self.teamsArray = basketballTeamsArray
-            self.tableView.reloadData()
-        }
+        
+        DatabaseService.instance.REF_BASKETBALLTEAM.observe(.value, with: { (snapshot) in
+            DatabaseService.instance.getBasketballTeamsFeed { (basketballTeamsArray) in
+                self.teamsArray = basketballTeamsArray
+                self.tableView.reloadData()
+            }
+        })
+        
     }
     @IBAction func logoutButtonPrsd(_ sender: UIButton) {
         try? Auth.auth().signOut()
@@ -121,8 +125,7 @@ extension EslesmeArayanTak_mlarVC : UITableViewDelegate , UITableViewDataSource{
         let teamChatVC = storyboard?.instantiateViewController(withIdentifier: "TeamChatVC") as! TeamChatVC
         teamChatVC.initTeam(team: selectedTeam)
         teamChatVC.takımKurucuUID = selectedTeam.kurucuUID
-        present(teamChatVC, animated: true, completion: nil)
-    
+        presentDetail(teamChatVC)
     }
 }
 

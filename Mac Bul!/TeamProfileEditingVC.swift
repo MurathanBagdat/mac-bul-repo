@@ -36,7 +36,7 @@ class TeamProfileEditingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
-        
+        bitisDatePicker.minimumDate = baslangıcDatePicker.date.addingTimeInterval(7200)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +86,52 @@ class TeamProfileEditingVC: UIViewController {
         self.view.endEditing(true)
     }
     @IBAction func baslangıcDatePickerValueChanged(_ sender: CustomDatePicker) {
+        bitisDatePicker.minimumDate = baslangıcDatePicker.date
+        bitisDatePicker.date = baslangıcDatePicker.date.addingTimeInterval(3600)
     }
 
     @IBAction func kaydetButtonPrsd(_ sender: UIButton) {
+        var logoName = String()
+        
+        if editingImageName != nil{
+            logoName = editingImageName!
+        }else{
+            logoName = (self.oldTeam?.takımLogoIsmi)!
+        }
+        
+        guard let yeniTakimIsmi = takımIsmiTextFiedl.text, takımIsmiTextFiedl.text != "" else {
+            let alertController = UIAlertController(title: "Takım ismini doldurmayı unutma", message: "", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
+                alertController.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+            return}
+        guard let yeniSehir = SehirTextField.text , SehirTextField.text != "" else {
+            let alertController = UIAlertController(title: "Oynamak istediğin ve sana yakın olan semtleri gir", message: "", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
+                alertController.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+            return
+        }
+       
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "tr_TR")
+        
+        let bitisDateInString = formatter.string(from: bitisDatePicker.date)
+        let baslangıçDateInString = formatter.string(from: baslangıcDatePicker.date)
+        
+        DatabaseService.instance.updatingBasketballTeamData(forTeamKey: (oldTeam?.takımKey)!, baslangıçTarihi: baslangıçDateInString, bitişTarihi: bitisDateInString, takımIsmi: yeniTakimIsmi, sehir: yeniSehir, logoIsmi: logoName, logoRengi: takımLogosuRengi!) { (succes) in
+            if succes{
+                print("yey")
+            }
+        }
+        
+        
     }
 
     @IBAction func arkaPlanaRenkVerButtonPrsd(_ sender: UIButton) {

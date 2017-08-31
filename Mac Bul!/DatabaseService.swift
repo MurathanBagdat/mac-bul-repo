@@ -254,6 +254,16 @@ class DatabaseService {
         
     }
 
+    func updatingBasketballTeamData(forTeamKey teamKey : String ,baslangıçTarihi : String, bitişTarihi : String, takımIsmi : String, sehir : String ,logoIsmi : String , logoRengi : String ,completion : @escaping (_ succes : Bool)->()){
+        
+        REF_BASKETBALLTEAM.child(teamKey).updateChildValues(["BaslangıçTarihi":baslangıçTarihi,                     "BitişTarihi"  : bitişTarihi ,
+                                                             "Takımİsmi": takımIsmi,
+                                                             "Sehir" : sehir,
+                                                             "logoIsmi" : logoIsmi,
+                                                             "logoRengi" : logoRengi])
+        completion(true)
+    }
+    
 
 }
 

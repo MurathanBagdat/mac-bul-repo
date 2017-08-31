@@ -135,7 +135,7 @@ class TeamChatVC: UIViewController {
         })
     }
     @IBAction func closeButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     @IBAction func sendButtonPrsd(_ sender: Any) {
         
@@ -162,23 +162,16 @@ class TeamChatVC: UIViewController {
         
         if team != nil {
             
-                
-                performSegue(withIdentifier: "toProfileForPublicVC", sender: nil)
+                let destVC = storyboard?.instantiateViewController(withIdentifier: "TeamProfileVCForPublic") as! TeamProfileVCForPublic
+                destVC.initTeam(selectedTeam: self.team!)
+                presentDetail(destVC)
     
             }else{
-            dismiss(animated: true, completion: nil)
+            dismissDetail()
         }
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toProfileForPublicVC"{
-            
-            let destVC = segue.destination as! TeamProfileVCForPublic
-            destVC.initTeam(selectedTeam: self.team!)
-            
-        }
-        
-    }
+  
     
     func scrolDownTheTableView(){
         if messages.count > 0{

@@ -74,13 +74,15 @@ class TeamProfileVCForPublic: UIViewController {
     }
     @IBAction func closeButtonPrsd(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+        dismissDetail()
         
     }
     @IBAction func editingButtonPrsd(_ sender: UIButton) {
         if Auth.auth().currentUser?.uid == team?.kurucuUID {
             
-            performSegue(withIdentifier: "toEditingVC", sender: nil)
+            let destVC = storyboard?.instantiateViewController(withIdentifier: "TeamProfileEditingVC") as! TeamProfileEditingVC
+            destVC.initTeam(team: team!)
+            presentDetail(destVC)
             
         }else{
             let alertController = UIAlertController(title: "Sadece takımın kurucusu takım bilgilerini güncelliyebilir!", message: "", preferredStyle: .alert)
@@ -89,13 +91,6 @@ class TeamProfileVCForPublic: UIViewController {
             })
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEditingVC"{
-            let destVC = segue.destination as! TeamProfileEditingVC
-            destVC.initTeam(team: self.team!)
         }
     }
     

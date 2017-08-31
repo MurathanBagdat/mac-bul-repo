@@ -30,7 +30,9 @@ class AvatarPickerVC: UIViewController {
     }
     
     @IBAction func backButtonPrsd(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+      
+            
+            self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -73,20 +75,12 @@ extension AvatarPickerVC : UICollectionViewDelegate , UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+            
         let selectedImageName = "image\(indexPath.item)"
-        
-        self.seçilenLogo = selectedImageName
-        performSegue(withIdentifier: "toTakimKurVC", sender: nil)
-        
+        takimLogosuIsmi = selectedImageName
+        dismiss(animated: true, completion: nil)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let takimKurVC = segue.destination as! Tak_mKurVC
-        
-        if segue.identifier == "toTakimKurVC" {
-            
-            takimKurVC.takimLogosuIsmi = self.seçilenLogo
-        }
-    }
+    
 }
 

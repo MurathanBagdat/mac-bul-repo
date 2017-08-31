@@ -158,6 +158,28 @@ class TeamChatVC: UIViewController {
         }
     }
     
+    @IBAction func takımBilgileriButtonPrsd(_ sender: UIButton) {
+        
+        if team != nil {
+            
+                
+                performSegue(withIdentifier: "toProfileForPublicVC", sender: nil)
+    
+            }else{
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toProfileForPublicVC"{
+            
+            let destVC = segue.destination as! TeamProfileVCForPublic
+            destVC.initTeam(selectedTeam: self.team!)
+            
+        }
+        
+    }
+    
     func scrolDownTheTableView(){
         if messages.count > 0{
             

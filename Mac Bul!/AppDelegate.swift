@@ -21,6 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
+        if Auth.auth().currentUser == nil {
+            
+            let stoayboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let onboardingVC = stoayboard.instantiateViewController(withIdentifier: "onboardingVC")
+            
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(onboardingVC, animated: true, completion: nil)
+            
+        }
+        
+        
+        
         return true
     }
 

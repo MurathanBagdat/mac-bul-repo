@@ -1,20 +1,21 @@
 //
-//  SearchTextField.swift
+//  EditingTextField.swift
 //  Mac Bul!
 //
-//  Created by Melisa Kısacık on 29.08.2017.
+//  Created by Melisa Kısacık on 30.08.2017.
 //  Copyright © 2017 MurathanBagdat. All rights reserved.
 //
 
 import UIKit
 
-class SearchTextField: UITextField {
+class EditingTextField: UITextField  ,UITextFieldDelegate{
 
     private var padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     
     override func awakeFromNib() {
         setupView()
-     
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 2
         super.awakeFromNib()
     }
     
@@ -33,8 +34,10 @@ class SearchTextField: UITextField {
     
     func setupView(){
         let placeholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSForegroundColorAttributeName:#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 0.4974597393)])
-
+        
         self.attributedPlaceholder = placeholder
     }
+    
+  
 
 }

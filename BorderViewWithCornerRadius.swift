@@ -16,7 +16,7 @@ class BorderViewWithCornerRadius: UIView {
         
         self.layer.cornerRadius = 5
         self.layer.borderColor = UIColor.white.cgColor
-        self.layer.borderWidth = 2
+        self.layer.borderWidth = 1
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.75
         self.layer.shadowRadius = 5

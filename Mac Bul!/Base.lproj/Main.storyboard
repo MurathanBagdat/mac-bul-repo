@@ -940,7 +940,7 @@
         <!--Team ChatVC-->
         <scene sceneID="icB-7b-Uel">
             <objects>
-                <viewController storyboardIdentifier="TeamChatVC" id="kEM-cy-xZL" customClass="TeamChatVC" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamChatVC" modalTransitionStyle="crossDissolve" id="kEM-cy-xZL" customClass="TeamChatVC" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WuY-Q8-5wq"/>
                         <viewControllerLayoutGuide type="bottom" id="DMc-C2-WY8"/>
@@ -1056,7 +1056,7 @@
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" red="0.56796729560000003" green="0.5529111028" blue="0.58368176220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="3CG-eZ-Su9" secondAttribute="trailing" constant="5" id="QdU-kG-fI3"/>
                                                                 <constraint firstItem="3CG-eZ-Su9" firstAttribute="leading" secondItem="UQC-a4-SGd" secondAttribute="leading" constant="5" id="gOr-1E-HLq"/>
@@ -1227,7 +1227,7 @@
         <!--Team ProfileVC For Public-->
         <scene sceneID="Vds-me-fWO">
             <objects>
-                <viewController storyboardIdentifier="TeamProfileVCForPublic" id="gTt-gR-2rz" customClass="TeamProfileVCForPublic" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamProfileVCForPublic" modalTransitionStyle="crossDissolve" id="gTt-gR-2rz" customClass="TeamProfileVCForPublic" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zH6-zc-Mns"/>
                         <viewControllerLayoutGuide type="bottom" id="Y6h-wl-cM2"/>
@@ -1258,9 +1258,12 @@
                                             <action selector="closeButtonPrsd:" destination="gTt-gR-2rz" eventType="touchUpInside" id="g4x-lT-W8O"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrF-Bh-TuN">
-                                        <rect key="frame" x="312" y="21" width="45" height="30"/>
-                                        <state key="normal" title="button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrF-Bh-TuN">
+                                        <rect key="frame" x="317" y="21" width="40" height="40"/>
+                                        <color key="tintColor" red="0.49561512470000002" green="0.70588235290000001" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="editButtonImage">
+                                            <color key="titleColor" red="0.49561512470000002" green="0.70588235290000001" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="editingButtonPrsd:" destination="gTt-gR-2rz" eventType="touchUpInside" id="Ycb-Mc-xJI"/>
                                         </connections>
@@ -1531,12 +1534,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wp-cS-pvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463" y="920"/>
+            <point key="canvasLocation" x="3439" y="920"/>
         </scene>
         <!--Team Profile EditingVC-->
         <scene sceneID="ggC-Y2-cFz">
             <objects>
-                <viewController storyboardIdentifier="TeamProfileEditingVC" id="kv7-1q-MFH" customClass="TeamProfileEditingVC" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamProfileEditingVC" modalTransitionStyle="crossDissolve" id="kv7-1q-MFH" customClass="TeamProfileEditingVC" customModule="Mac_Bul_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q3i-BP-nNC"/>
                         <viewControllerLayoutGuide type="bottom" id="aYR-xh-vAn"/>
@@ -1764,7 +1767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCU-xu-Uux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4474" y="1160"/>
+            <point key="canvasLocation" x="4303" y="1160"/>
         </scene>
         <!--Avatar PickerVC-->
         <scene sceneID="eeD-O1-BOn">
@@ -2586,6 +2589,7 @@
         <image name="close" width="21" height="20"/>
         <image name="comeImage3" width="40" height="35"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
+        <image name="editButtonImage" width="40" height="40"/>
         <image name="footballBG" width="375" height="317"/>
         <image name="image0" width="30" height="30"/>
         <image name="image7" width="40" height="40"/>

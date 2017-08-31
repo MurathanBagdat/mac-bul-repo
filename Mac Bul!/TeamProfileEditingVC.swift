@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var editingImageName : String?
 class TeamProfileEditingVC: UIViewController {
 
     
@@ -26,17 +26,13 @@ class TeamProfileEditingVC: UIViewController {
     }
     
     var oldTeam : BasketballTeam?
-    var imageName : String?
+    var takımLogosuRengi : String?
+    
     
     func initTeam(team :BasketballTeam){
         self.oldTeam = team
     }
-    
-    func initImage(name : String){
-        
-        self.imageName = name
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
@@ -46,12 +42,13 @@ class TeamProfileEditingVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if imageName != nil {
-            self.teamLogoImageView.image = UIImage(named: imageName!)
+        if editingImageName != nil {
+            self.teamLogoImageView.image = UIImage(named: editingImageName!)
         }else{
-        self.teamLogoImageView.image = UIImage(named: (self.oldTeam?.takımLogoIsmi)!)
+            self.teamLogoImageView.image = UIImage(named: (self.oldTeam?.takımLogoIsmi)!)
         }
         
+        self.takımLogosuRengi = self.oldTeam?.takımLogoRenk!
         self.teamLogoImageView.backgroundColor = DatabaseService.instance.returnUIColorFromString(component: (self.oldTeam?.takımLogoRenk!)!)
         self.takımIsmiTextFiedl.text = oldTeam?.takimIsmi!
         self.SehirTextField.text = oldTeam?.sehir
@@ -95,11 +92,26 @@ class TeamProfileEditingVC: UIViewController {
     }
 
     @IBAction func arkaPlanaRenkVerButtonPrsd(_ sender: UIButton) {
+        
+        
+        let r  = CGFloat(arc4random_uniform(255)) / 255
+        let g  = CGFloat(arc4random_uniform(255)) / 255
+        let b  = CGFloat(arc4random_uniform(255)) / 255
+        
+        self.takımLogosuRengi = "[\(r), \(g), \(b), 1]"
+        
+        
+        UIView.animate(withDuration: 0.2) {
+            self.teamLogoImageView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        }
+
     }
  
     @IBAction func selectAnImage(_ sender: UIButton) {
-        
-}
+        let destVC = storyboard?.instantiateViewController(withIdentifier: "AvatarPickerVC") as! AvatarPickerVC
+        destVC.isFormEditing = true
+        present(destVC, animated: true, completion: nil)
+    }
     
 }
 

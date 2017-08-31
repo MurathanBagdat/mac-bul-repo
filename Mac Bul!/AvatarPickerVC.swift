@@ -15,7 +15,7 @@ class AvatarPickerVC: UIViewController {
     
     var images = [UIImage]()
     var seçilenLogo = String()
-    
+    var isFormEditing = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,10 +75,18 @@ extension AvatarPickerVC : UICollectionViewDelegate , UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if isFormEditing{
+            let selectedImageName = "image\(indexPath.item)"
+            editingImageName = selectedImageName
+            dismiss(animated: true, completion: nil)
+            isFormEditing = false
+        }else{
+            let selectedImageName = "image\(indexPath.item)"
+            takimLogosuIsmi = selectedImageName
+            dismiss(animated: true, completion: nil)
+        }
             
-        let selectedImageName = "image\(indexPath.item)"
-        takimLogosuIsmi = selectedImageName
-        dismiss(animated: true, completion: nil)
+        
     }
 
     

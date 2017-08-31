@@ -14,6 +14,8 @@
 		074F04EC1F5758C700B4B98A /* TeamProfileEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */; };
 		074F04F31F575C2F00B4B98A /* EditingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F21F575C2F00B4B98A /* EditingTextField.swift */; };
 		074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F41F5768C600B4B98A /* CustomDatePicker.swift */; };
+		074F04F71F578D5900B4B98A /* UserdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F61F578D5900B4B98A /* UserdataService.swift */; };
+		074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F91F57917E00B4B98A /* TransitionExt.swift */; };
 		07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */; };
 		07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D591F5467BD003D6358 /* BasketballTeam.swift */; };
 		07609D5C1F5474F3003D6358 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D5B1F5474F3003D6358 /* CustomSlider.swift */; };
@@ -53,6 +55,8 @@
 		074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileEditingVC.swift; sourceTree = "<group>"; };
 		074F04F21F575C2F00B4B98A /* EditingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTextField.swift; sourceTree = "<group>"; };
 		074F04F41F5768C600B4B98A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		074F04F61F578D5900B4B98A /* UserdataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserdataService.swift; sourceTree = "<group>"; };
+		074F04F91F57917E00B4B98A /* TransitionExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
 		07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EslesmeArayanTakimCell.swift; sourceTree = "<group>"; };
 		07609D591F5467BD003D6358 /* BasketballTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeam.swift; sourceTree = "<group>"; };
 		07609D5B1F5474F3003D6358 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
@@ -145,6 +149,14 @@
 			name = TextField;
 			sourceTree = "<group>";
 		};
+		074F04F81F57916400B4B98A /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				074F04F91F57917E00B4B98A /* TransitionExt.swift */,
+			);
+			name = Ext;
+			sourceTree = "<group>";
+		};
 		0785ECA81F5623B100B21812 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 		07FABD041F54634500B279AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				074F04F81F57916400B4B98A /* Ext */,
 				074F04EF1F575AFE00B4B98A /* Slider */,
 				074F04EE1F575AE600B4B98A /* ImageView */,
 				074F04ED1F575AD300B4B98A /* View */,
@@ -254,6 +267,7 @@
 			children = (
 				07FBEA901F534073004EDDE2 /* AuthService.swift */,
 				07FBEA921F534083004EDDE2 /* DatabaseService.swift */,
+				074F04F61F578D5900B4B98A /* UserdataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -428,6 +442,7 @@
 				07FBEA991F535439004EDDE2 /* WhiteBorderButton.swift in Sources */,
 				07294EAA1F5738F6004F20D2 /* TeamProfileVCForPublic.swift in Sources */,
 				074F04F31F575C2F00B4B98A /* EditingTextField.swift in Sources */,
+				074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */,
 				07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */,
 				071D39421F55C9580074CF1F /* BasketballTeamMessage.swift in Sources */,
 				07609D621F54F959003D6358 /* SearchTextField.swift in Sources */,
@@ -436,6 +451,7 @@
 				07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */,
 				07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */,
 				0785ECAA1F56295900B21812 /* AvatarPickerCell.swift in Sources */,
+				074F04F71F578D5900B4B98A /* UserdataService.swift in Sources */,
 				07FBEA8B1F533C36004EDDE2 /* HesabaGirVC.swift in Sources */,
 				071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */,
 				07FBEA911F534073004EDDE2 /* AuthService.swift in Sources */,

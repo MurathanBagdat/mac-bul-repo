@@ -244,7 +244,7 @@ class DatabaseService {
             for basketballTeam in basketballTeamsSnapshot{
                 if basketballTeam.key == teamKey{
                     
-                        let kurucUID = basketballTeam.childSnapshot(forPath: "TakımKurucuUID").value as! String!
+                    let kurucUID = basketballTeam.childSnapshot(forPath: "TakımKurucuUID").value as! String!
                     completion(kurucUID!)
                 }
             }
@@ -253,7 +253,7 @@ class DatabaseService {
         
         
     }
-    
+
 
 }
 

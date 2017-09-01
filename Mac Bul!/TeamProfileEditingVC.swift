@@ -155,6 +155,9 @@ class TeamProfileEditingVC: UIViewController {
         destVC.isFormEditing = true
         present(destVC, animated: true, completion: nil)
     }
+    @IBAction func closeButtonpresd(_ sender: UIButton) {
+        dismissDetail()
+    }
     
 }
 

@@ -12,10 +12,11 @@ class AvatarPickerCell: UICollectionViewCell {
     
     
     
+    @IBOutlet weak var yeniTakımKurmaImage: UIImageView!
     @IBOutlet weak var avatarImage: UIImageView!
     
     func configureCell(avatarImage : UIImage){
         
-        self.avatarImage.image = avatarImage
+        self.yeniTakımKurmaImage.image = avatarImage
     }
 }

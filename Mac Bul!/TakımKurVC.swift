@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 var takimLogosuIsmi = "image7"
 class Tak_mKurVC: UIViewController {
@@ -166,16 +167,18 @@ class Tak_mKurVC: UIViewController {
             esktraAciklamalar = ""
         
         }
+        let lat :CLLocationDegrees = 41.008238
+        let long : CLLocationDegrees = 28.978359
         DatabaseService.instance.getUsername(byUID: (Auth.auth().currentUser?.uid)!) { (username, succes) in
             if succes{
              
-                let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye, lokasyonlar: sahaLokasyonu, takımKey: nil, takımYasOrtalaması: yaş, takımLogoIsmi: takimLogosuIsmi, takımLogoRenk: self.takimLogosuRengi)
+               // let basketballTakımı = BasketballTeam(kurucuUID: Auth.auth().currentUser?.uid, takimIsmi: takımIsmi, takimSayisi: takımSayısı, sehir: sehir, baslangicTarih: baslangıcDateInString, bitisTarihi: bitisDateInString, aciklama: esktraAciklamalar, kurucuKullanıcıAdı: username, takımSeviyesi: seviye, lokasyonlar: sahaLokasyonu, takımKey: nil, takımYasOrtalaması: yaş, takımLogoIsmi: takimLogosuIsmi, takımLogoRenk: self.takimLogosuRengi , teamLat : lat, teamLong: long)
                 
-                DatabaseService.instance.createBasketballTeam(withBasketballTeam: basketballTakımı) { (succes) in
-                    if succes{
-                        
-                    }
-                }
+//                DatabaseService.instance.createBasketballTeam(withBasketballTeam: basketballTakımı) { (succes) in
+//                    if succes{
+//                        
+//                    }
+                
             }
         }
     }

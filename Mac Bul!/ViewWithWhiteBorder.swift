@@ -15,6 +15,9 @@ class ViewWithWhiteBorder: UIView {
         
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.white.cgColor
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.76
+        self.layer.shadowRadius = 5
         super.awakeFromNib()
     }
     

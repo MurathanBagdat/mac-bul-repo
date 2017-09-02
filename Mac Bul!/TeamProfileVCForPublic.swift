@@ -51,18 +51,8 @@ class TeamProfileVCForPublic: UIViewController {
             self.yaşOrtLabel.text = team.takımYasOrtalaması!
             self.takımKlasmanıLabel.text = team.takımSeviyesi!
             self.takımSehriLabel.text = team.sehir!
-            self.lokasyonTercihiLabel.text = team.lokasyonlar!
             self.baslangıçTarihiLabel.text = team.baslangicTarih
             self.bitisTarihiLabel.text = team.bitisTarihi
-            if team.aciklama == ""{
-                self.ekstraAçıklamaHeadre.text = "Ekstra Açıklama Yok!"
-                self.ekstraAçıklamalarLabel.isHidden = true
-            
-            }else{
-                self.ekstraAçıklamaHeadre.text = "Ekstra Açıklamalar"
-                self.ekstraAçıklamalarLabel.isHidden = false
-                self.ekstraAçıklamalarLabel.text = team.aciklama
-            }
     }
     
     

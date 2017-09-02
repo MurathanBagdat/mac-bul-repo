@@ -21,6 +21,7 @@ class TeamChatVC: UIViewController {
     }
 
     @IBOutlet weak var messageTextField: TextFieldWithInsets!
+    
     @IBOutlet weak var tableView: UITableView!{
         didSet{
             let tab = UITapGestureRecognizer(target: self, action: #selector(TeamChatVC.dismissTheKeyboard))
@@ -53,6 +54,8 @@ class TeamChatVC: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
+        
+        
         
         
         guard let takımKey = team?.takımKey else {

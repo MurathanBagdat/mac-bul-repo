@@ -8,7 +8,7 @@
 
 import Foundation
 import Firebase
-
+import MapKit
 let DB_BASE = Database.database().reference()
 
 class DatabaseService {
@@ -53,7 +53,7 @@ class DatabaseService {
     
     func createBasketballTeam(withBasketballTeam basketballTeam : BasketballTeam , completion : @escaping (_ succes: Bool)->()) {
         
-        REF_BASKETBALLTEAM.childByAutoId().updateChildValues(["Takımİsmi" : basketballTeam.takimIsmi , "TakımKurucuUID" : basketballTeam.kurucuUID , "TakımSeviyesi" : basketballTeam.takımSeviyesi, "TakımSayısı" : basketballTeam.takimSayisi , "Sehir" : basketballTeam.sehir, "Lokasyonlar" : basketballTeam.lokasyonlar, "KurucuKullanıcıAdı" : basketballTeam.kurucuKullanıcıAdı, "BaslangıçTarihi" : basketballTeam.baslangicTarih, "BitişTarihi" : basketballTeam.bitisTarihi, "EkstraAçıklamalar" : basketballTeam.aciklama, "yasOrt" : basketballTeam.takımYasOrtalaması , "logoIsmi" : basketballTeam.takımLogoIsmi, "logoRengi" : basketballTeam.takımLogoRenk ])
+        REF_BASKETBALLTEAM.childByAutoId().updateChildValues(["Takımİsmi" : basketballTeam.takimIsmi , "TakımKurucuUID" : basketballTeam.kurucuUID , "TakımSeviyesi" : basketballTeam.takımSeviyesi, "TakımSayısı" : basketballTeam.takimSayisi , "Sehir" : basketballTeam.sehir, "KurucuKullanıcıAdı" : basketballTeam.kurucuKullanıcıAdı, "BaslangıçTarihi" : basketballTeam.baslangicTarih, "BitişTarihi" : basketballTeam.bitisTarihi,"yasOrt" : basketballTeam.takımYasOrtalaması , "logoIsmi" : basketballTeam.takımLogoIsmi, "logoRengi" : basketballTeam.takımLogoRenk, "lat" : basketballTeam.teamLat, "long" : basketballTeam.teamLong ])
         
         completion(true)
     }
@@ -74,16 +74,18 @@ class DatabaseService {
                 let sehir = returnedBasketballTeam.childSnapshot(forPath: "Sehir").value as! String
                 let baslangicTarih = returnedBasketballTeam.childSnapshot(forPath: "BaslangıçTarihi").value as! String
                 let bitisTarihi = returnedBasketballTeam.childSnapshot(forPath: "BitişTarihi").value as! String
-                let aciklama = returnedBasketballTeam.childSnapshot(forPath: "EkstraAçıklamalar").value as! String
+               // let aciklama = returnedBasketballTeam.childSnapshot(forPath: "EkstraAçıklamalar").value as! String
                 let KurucuKullanıcıAdı = returnedBasketballTeam.childSnapshot(forPath: "KurucuKullanıcıAdı").value as! String
                 let TakımSeviyesi = returnedBasketballTeam.childSnapshot(forPath: "TakımSeviyesi").value as! String
-                let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
+                //let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
                 let takımKey = returnedBasketballTeam.key
                 let yasOrt = returnedBasketballTeam.childSnapshot(forPath: "yasOrt").value as! String
                 let logoIsmi = returnedBasketballTeam.childSnapshot(forPath: "logoIsmi").value as! String
                 let logoRenk = returnedBasketballTeam.childSnapshot(forPath: "logoRengi").value as! String
+                let lat = returnedBasketballTeam.childSnapshot(forPath: "lat").value as! CLLocationDegrees
+                let long = returnedBasketballTeam.childSnapshot(forPath: "long").value as! CLLocationDegrees
                 
-                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk)
+                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk, teamLat: lat, teamLong: long)
               
                 basketballTeamArray.append(basketballTeam)
             }
@@ -97,6 +99,42 @@ class DatabaseService {
         REF_BASKETBALLTEAM.child(teamKey).removeValue()
         completion(true)
     }
+    
+    func getBasketballTeam(forKey teamKey : String , completion: @escaping (_ basketballTeam : BasketballTeam, _ succes : Bool)->()){
+        
+        REF_BASKETBALLTEAM.observe(.value, with: { (basketteamsSnapshot) in
+            
+            guard let basketteamsSnapshot = basketteamsSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for returnedBasketballTeam in basketteamsSnapshot{
+                if returnedBasketballTeam.key == teamKey{
+                    
+                    let kurucuUID = returnedBasketballTeam.childSnapshot(forPath: "TakımKurucuUID").value as! String
+                    let takimIsmi = returnedBasketballTeam.childSnapshot(forPath: "Takımİsmi").value as! String
+                    let takimSayisi = returnedBasketballTeam.childSnapshot(forPath: "TakımSayısı").value as! String
+                    let sehir = returnedBasketballTeam.childSnapshot(forPath: "Sehir").value as! String
+                    let baslangicTarih = returnedBasketballTeam.childSnapshot(forPath: "BaslangıçTarihi").value as! String
+                    let bitisTarihi = returnedBasketballTeam.childSnapshot(forPath: "BitişTarihi").value as! String
+                 //   let aciklama = returnedBasketballTeam.childSnapshot(forPath: "EkstraAçıklamalar").value as! String
+                    let KurucuKullanıcıAdı = returnedBasketballTeam.childSnapshot(forPath: "KurucuKullanıcıAdı").value as! String
+                    let TakımSeviyesi = returnedBasketballTeam.childSnapshot(forPath: "TakımSeviyesi").value as! String
+                //   let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
+                    let takımKey = returnedBasketballTeam.key
+                    let yasOrt = returnedBasketballTeam.childSnapshot(forPath: "yasOrt").value as! String
+                    let logoIsmi = returnedBasketballTeam.childSnapshot(forPath: "logoIsmi").value as! String
+                    let logoRenk = returnedBasketballTeam.childSnapshot(forPath: "logoRengi").value as! String
+                    let lat = returnedBasketballTeam.childSnapshot(forPath: "lat").value as! Double
+                    let long = returnedBasketballTeam.childSnapshot(forPath: "long").value as! Double
+                    
+                   let returnedbasketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk, teamLat: lat, teamLong: long)
+                    
+                    completion(returnedbasketballTeam, true)
+                }
+            }
+        })
+    }
+    
+    
     
     func getBasketballTeam(forSearchQuery query : String , completion: @escaping (_ basketballTeams : [BasketballTeam] , _ succes : (Bool))->()) {
         var basketballTeamArray = [BasketballTeam]()
@@ -116,18 +154,20 @@ class DatabaseService {
                     let sehir = returnedBasketballTeam.childSnapshot(forPath: "Sehir").value as! String
                     let baslangicTarih = returnedBasketballTeam.childSnapshot(forPath: "BaslangıçTarihi").value as! String
                     let bitisTarihi = returnedBasketballTeam.childSnapshot(forPath: "BitişTarihi").value as! String
-                    let aciklama = returnedBasketballTeam.childSnapshot(forPath: "EkstraAçıklamalar").value as! String
+                    //let aciklama = returnedBasketballTeam.childSnapshot(forPath: "EkstraAçıklamalar").value as! String
                     let KurucuKullanıcıAdı = returnedBasketballTeam.childSnapshot(forPath: "KurucuKullanıcıAdı").value as! String
                     let TakımSeviyesi = returnedBasketballTeam.childSnapshot(forPath: "TakımSeviyesi").value as! String
-                    let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
+                    //let Lokasyonlar = returnedBasketballTeam.childSnapshot(forPath: "Lokasyonlar").value as! String
                     let takımKey = returnedBasketballTeam.key
                     let yasOrt = returnedBasketballTeam.childSnapshot(forPath: "yasOrt").value as! String
                     let logoIsmi = returnedBasketballTeam.childSnapshot(forPath: "logoIsmi").value as! String
                     let logoRenk = returnedBasketballTeam.childSnapshot(forPath: "logoRengi").value as! String
+                    let lat = returnedBasketballTeam.childSnapshot(forPath: "lat").value as! Double
+                    let long = returnedBasketballTeam.childSnapshot(forPath: "long").value as! Double
                     
-                    let basketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, aciklama: aciklama, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, lokasyonlar: Lokasyonlar, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk)
+                    let returnedbasketballTeam = BasketballTeam(kurucuUID: kurucuUID, takimIsmi: takimIsmi, takimSayisi: takimSayisi, sehir: sehir, baslangicTarih: baslangicTarih, bitisTarihi: bitisTarihi, kurucuKullanıcıAdı: KurucuKullanıcıAdı, takımSeviyesi: TakımSeviyesi, takımKey: takımKey, takımYasOrtalaması: yasOrt, takımLogoIsmi: logoIsmi, takımLogoRenk: logoRenk, teamLat: lat, teamLong: long)
                     
-                    basketballTeamArray.append(basketballTeam)
+                    basketballTeamArray.append(returnedbasketballTeam)
                 }
                 
             }

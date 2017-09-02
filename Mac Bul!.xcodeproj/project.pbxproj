@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0703F5C01F58E6A300A9BC34 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0703F5BF1F58E6A300A9BC34 /* MapVC.swift */; };
+		071580141F59F99500D4F42E /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071580131F59F99500D4F42E /* RegistrationTextField.swift */; };
+		071580161F5A043400D4F42E /* TakımKurmaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071580151F5A043400D4F42E /* TakımKurmaVC.swift */; };
 		071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D393D1F55AF850074CF1F /* TeamChatVC.swift */; };
 		071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */; };
 		071D39421F55C9580074CF1F /* BasketballTeamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D39411F55C9580074CF1F /* BasketballTeamMessage.swift */; };
 		07294EAA1F5738F6004F20D2 /* TeamProfileVCForPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07294EA91F5738F6004F20D2 /* TeamProfileVCForPublic.swift */; };
+		0737E1AB1F5A2B6A006EA3A5 /* pinWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */; };
+		0737E1AD1F5A363A006EA3A5 /* DateModelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737E1AC1F5A363A006EA3A5 /* DateModelPickerView.swift */; };
+		074003FB1F59B9DC00328DEF /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074003FA1F59B9DC00328DEF /* CustomPin.swift */; };
 		074F04EC1F5758C700B4B98A /* TeamProfileEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */; };
 		074F04F31F575C2F00B4B98A /* EditingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F21F575C2F00B4B98A /* EditingTextField.swift */; };
 		074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F41F5768C600B4B98A /* CustomDatePicker.swift */; };
@@ -48,10 +54,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0703F5BF1F58E6A300A9BC34 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		071580131F59F99500D4F42E /* RegistrationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
+		071580151F5A043400D4F42E /* TakımKurmaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TakımKurmaVC.swift"; sourceTree = "<group>"; };
 		071D393D1F55AF850074CF1F /* TeamChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamChatVC.swift; sourceTree = "<group>"; };
 		071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamChatCell.swift; sourceTree = "<group>"; };
 		071D39411F55C9580074CF1F /* BasketballTeamMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeamMessage.swift; sourceTree = "<group>"; };
 		07294EA91F5738F6004F20D2 /* TeamProfileVCForPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileVCForPublic.swift; sourceTree = "<group>"; };
+		0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pinWithImage.swift; sourceTree = "<group>"; };
+		0737E1AC1F5A363A006EA3A5 /* DateModelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModelPickerView.swift; sourceTree = "<group>"; };
+		074003FA1F59B9DC00328DEF /* CustomPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
 		074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileEditingVC.swift; sourceTree = "<group>"; };
 		074F04F21F575C2F00B4B98A /* EditingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTextField.swift; sourceTree = "<group>"; };
 		074F04F41F5768C600B4B98A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 			children = (
 				07A4109A1F5604430043A1D3 /* BorderViewWithCornerRadius.swift */,
 				07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */,
+				07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				07FBEA981F535439004EDDE2 /* WhiteBorderButton.swift */,
-				07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */,
 			);
 			name = Button;
 			sourceTree = "<group>";
@@ -145,6 +157,7 @@
 				07FBEA851F533550004EDDE2 /* TextFieldWithInsets.swift */,
 				07609D611F54F959003D6358 /* SearchTextField.swift */,
 				074F04F21F575C2F00B4B98A /* EditingTextField.swift */,
+				071580131F59F99500D4F42E /* RegistrationTextField.swift */,
 			);
 			name = TextField;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 				074F04F11F575B1600B4B98A /* TextField */,
 				074F04F01F575B1000B4B98A /* Button */,
 				074F04F41F5768C600B4B98A /* CustomDatePicker.swift */,
+				0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */,
 			);
 			name = Resources;
 			path = ..;
@@ -230,6 +244,8 @@
 				07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */,
 				071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */,
 				0785ECA91F56295900B21812 /* AvatarPickerCell.swift */,
+				074003FA1F59B9DC00328DEF /* CustomPin.swift */,
+				0737E1AC1F5A363A006EA3A5 /* DateModelPickerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -248,6 +264,8 @@
 				0785ECA41F5623AA00B21812 /* AvatarPickerVC.swift */,
 				07294EA91F5738F6004F20D2 /* TeamProfileVCForPublic.swift */,
 				074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */,
+				0703F5BF1F58E6A300A9BC34 /* MapVC.swift */,
+				071580151F5A043400D4F42E /* TakımKurmaVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -389,12 +407,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mac Bul!/Pods-Mac Bul!-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,11 +453,14 @@
 				071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */,
 				07FBEA931F534083004EDDE2 /* DatabaseService.swift in Sources */,
 				07FBEA971F534A16004EDDE2 /* SecimVC.swift in Sources */,
+				0737E1AB1F5A2B6A006EA3A5 /* pinWithImage.swift in Sources */,
 				07C56C701F536F15001D1E88 /* ViewWithWhiteBorder.swift in Sources */,
 				07C56C741F53AC4F001D1E88 /* TakımKurVC.swift in Sources */,
 				0785ECA31F5619D400B21812 /* RoundedImage.swift in Sources */,
+				071580161F5A043400D4F42E /* TakımKurmaVC.swift in Sources */,
 				074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */,
 				074F04EC1F5758C700B4B98A /* TeamProfileEditingVC.swift in Sources */,
+				071580141F59F99500D4F42E /* RegistrationTextField.swift in Sources */,
 				07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */,
 				07FBEA991F535439004EDDE2 /* WhiteBorderButton.swift in Sources */,
 				07294EAA1F5738F6004F20D2 /* TeamProfileVCForPublic.swift in Sources */,
@@ -451,8 +474,11 @@
 				07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */,
 				07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */,
 				0785ECAA1F56295900B21812 /* AvatarPickerCell.swift in Sources */,
+				0703F5C01F58E6A300A9BC34 /* MapVC.swift in Sources */,
 				074F04F71F578D5900B4B98A /* UserdataService.swift in Sources */,
+				074003FB1F59B9DC00328DEF /* CustomPin.swift in Sources */,
 				07FBEA8B1F533C36004EDDE2 /* HesabaGirVC.swift in Sources */,
+				0737E1AD1F5A363A006EA3A5 /* DateModelPickerView.swift in Sources */,
 				071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */,
 				07FBEA911F534073004EDDE2 /* AuthService.swift in Sources */,
 				07FBEA801F53346A004EDDE2 /* RoundedView.swift in Sources */,

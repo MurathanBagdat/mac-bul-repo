@@ -10,17 +10,5 @@ import UIKit
 
 class CustomDatePicker: UIDatePicker {
 
-  
-    override func awakeFromNib() {
-        
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = 5
-        
-        
-        super.awakeFromNib()
-    }
-    
-    
     
 }

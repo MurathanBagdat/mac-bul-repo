@@ -39,7 +39,6 @@ class EslesmeArayanTakimCell: UITableViewCell {
         self.enErkenOynamaTarihiLabel.text = "Başlangıç : \(basketballTeam.baslangicTarih!)"
         self.sehirLabel.text = "ŞEHİR : \(basketballTeam.sehir!)"
         self.takımSayısıLabel.text = "TAKIM SAYISI : \(basketballTeam.takimSayisi!)"
-        self.sahaTercihiLabel.text = "Saha Tercihi : \(basketballTeam.lokasyonlar!)"
         self.bitisTarihiLabel.text = "Bitiş : \(basketballTeam.bitisTarihi!)"
         self.takımınYasOrtlaması.text = "TAKIM YAŞ ORT.: \(basketballTeam.takımYasOrtalaması!)"
         self.takımLogosu.image = UIImage(named: basketballTeam.takımLogoIsmi!)

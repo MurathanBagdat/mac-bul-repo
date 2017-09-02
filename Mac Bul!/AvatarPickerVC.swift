@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AvatarPickerVC: UIViewController {
+class AvatarPickerVC: UIViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,6 +16,11 @@ class AvatarPickerVC: UIViewController {
     var images = [UIImage]()
     var seçilenLogo = String()
     var isFormEditing = false
+    var isFromNewTeamKur = false
+    
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +39,9 @@ class AvatarPickerVC: UIViewController {
             
             self.dismiss(animated: true, completion: nil)
     }
+    
+
+
 }
 
 

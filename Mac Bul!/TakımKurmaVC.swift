@@ -148,6 +148,13 @@ class Tak_mKurmaVC: UIViewController{
             
             ikinciButton.isHidden = false
             ikinciButton.isEnabled = true
+            
+            if self.takimIsmiTextField.isFirstResponder{
+                takimIsmiTextField.resignFirstResponder()
+            }
+            if self.takimSayısıTextField.isFirstResponder{
+                takimSayısıTextField.resignFirstResponder()
+            }
         }else{
             
             let alertController = UIAlertController(title: "Takımının bilgilerini eksiksiz girmlesin", message: "", preferredStyle: .alert)

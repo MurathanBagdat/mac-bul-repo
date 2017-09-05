@@ -88,10 +88,6 @@ extension AvatarPickerVC : UICollectionViewDelegate , UICollectionViewDataSource
             editingImageName = selectedImageName
             dismiss(animated: true, completion: nil)
             isFormEditing = false
-        }else{
-            let selectedImageName = "image\(indexPath.item)"
-            takimLogosuIsmi = selectedImageName
-            dismiss(animated: true, completion: nil)
         }
             
         

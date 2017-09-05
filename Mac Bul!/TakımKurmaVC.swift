@@ -95,41 +95,12 @@ class Tak_mKurmaVC: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         
-        
-        
-        macSeviyesiSecView.isHidden = true
-        yasOrtalamasıSec.isHidden = true
-        
-        ikinciButton.isHidden = true
-        ikinciButton.isEnabled = false
-        
-        self.üçüncüButton.isHidden = true
-        self.üçüncüButton.isEnabled = false
-        
-        sehirYazmaView.isHidden = true
-        mapView.isHidden = true
-        pinLabel.isHidden = true
-        
-        bitisView.isHidden = true
-        baslangıçDatePciker.isHidden = true
-        baslangıçHeightConstraing.constant = 75
-        baslangıcView.isHidden = true
-        zamanLabel.isHidden = true
-        logoStackView.isHidden = true
-        avatarButton.isHidden = true
-        doneButton.isHidden = true
-    
-        bitişHeightConstraint.constant = 75
-        bitişDatePicker.isHidden = true
-        baslangıçDatePciker.date = Date()
-        baslangıçDatePciker.minimumDate = Date()
-        
-        self.collecitionView.alpha = 0
-        
-        
+        self.ikinciSayfayıGizle()
+        self.üçüncüSayfayıGizle()
+        self.dördüncüSayfayıGizle()
+ 
         self.imageView.image = UIImage(named: teamLogoName)
     }
-    
     
     @IBAction func nextButton(_ sender: UIButton) {
         
@@ -137,17 +108,8 @@ class Tak_mKurmaVC: UIViewController{
             takimIsmi = takimIsmiTextField.text!
             takimSayısı = takimSayısıTextField.text!
             
-            takimIsmiTextField.isHidden = true
-            takimSayısıTextField.isHidden = true
-            
-            macSeviyesiSecView.isHidden = false
-            yasOrtalamasıSec.isHidden = false
-            
-            ilkButton.isHidden = true
-            ilkButton.isEnabled = false
-            
-            ikinciButton.isHidden = false
-            ikinciButton.isEnabled = true
+            birinciSayfayıGizle()
+            ikinciSayfayıGöster()
             
             if self.takimIsmiTextField.isFirstResponder{
                 takimIsmiTextField.resignFirstResponder()
@@ -198,19 +160,8 @@ class Tak_mKurmaVC: UIViewController{
                 return "18-25"
             }
         }
-        print(yaş)
-        print(seviye)
-        macSeviyesiSecView.isHidden = true
-        yasOrtalamasıSec.isHidden = true
-        ikinciButton.isHidden = true
-        ikinciButton.isEnabled = false
-        
-        self.üçüncüButton.isHidden = false
-        self.üçüncüButton.isEnabled = true
-        
-        self.mapView.isHidden = false
-        self.sehirYazmaView.isHidden = false
-        self.pinLabel.isHidden = false
+        ikinciSayfayıGizle()
+        üçüncüSayfayıGöster()
         
         configureLocationServices()
         centerMapOnUserLocation()
@@ -232,22 +183,9 @@ class Tak_mKurmaVC: UIViewController{
             
             if latitude != 0.0 && longitude != 0.0 {
                 
-                self.üçüncüButton.isHidden = true
-                self.üçüncüButton.isEnabled = false
-                self.mapView.isHidden = true
-                self.sehirYazmaView.isHidden = true
-                self.pinLabel.isHidden = true
-                
-                self.doneButton.isHidden = false
-                self.zamanLabel.isHidden = false
-                baslangıcView.isHidden = false
-                bitisView.isHidden = false
-                avatarButton.isHidden = false
-                logoStackView.isHidden = false
-                
-                
-                
-                
+                üçüncüSayfayıGizle()
+                dördüncüSayfayıGöster()
+               
             }else{
                 let alertController = UIAlertController(title: "Pin koysan iyi edersin rakiplerin seni daha çabuk bulabilir", message: "", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
@@ -284,50 +222,39 @@ class Tak_mKurmaVC: UIViewController{
            
             if isBitisPickerShown {
                 UIView.animate(withDuration: 0.3, animations: { 
-                    self.bitişHeightConstraint.constant = 75
-                    self.bitişDatePicker.isHidden = true
-                    self.isBitisPickerShown = false
+                    self.bitişDatePickerSakla()
                 })
             }
             
             UIView.animate(withDuration: 0.3, animations: { 
-                self.baslangıçHeightConstraing.constant = 220
-                self.baslangıçDatePciker.isHidden = false
-                self.isBaslangıcPickerShown = true
+                self.başlangıçDatePickerGöster()
             })
             
         }else{
             UIView.animate(withDuration: 0.3, animations: { 
-                self.baslangıçHeightConstraing.constant = 75
-                self.baslangıçDatePciker.isHidden = true
-                self.isBaslangıcPickerShown = false
+               self.başlangıçDatePickerSakla()
             })
            
         }
         
     }
+ 
     @IBAction func togglesTheBitisPicker(_ sender: UIButton) {
         
         if isBitisPickerShown == false{
             if isBaslangıcPickerShown{
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.baslangıçDatePciker.isHidden = true
-                    self.baslangıçHeightConstraing.constant = 75
-                    self.isBaslangıcPickerShown = false
+                    self.başlangıçDatePickerSakla()
                 })
             }
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.bitişHeightConstraint.constant = 220
-                self.bitişDatePicker.isHidden = false
-                self.isBitisPickerShown = true
+                self.bitişDatePickerGöster()
             })
             
         }else{
             UIView.animate(withDuration: 0.3, animations: {
-                self.bitişHeightConstraint.constant = 75
-                self.bitişDatePicker.isHidden = true
-                self.isBitisPickerShown = false
+                self.bitişDatePickerSakla()
             })
         }
         
@@ -478,32 +405,6 @@ extension Tak_mKurmaVC : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         centerMapOnUserLocation()
     }
-}
-extension Tak_mKurmaVC{
-    
-    func keyboardWillShowNotification(notification: NSNotification) {
-        updateBottomLayoutConstraintWithNotification(notification:notification)
-    }
-    func keyboardWillHideNotification(notification: NSNotification) {
-        updateBottomLayoutConstraintWithNotification(notification:notification)
-    }
-    func updateBottomLayoutConstraintWithNotification(notification: NSNotification) {
-        let userInfo = notification.userInfo!
-        
-        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
-        let rawAnimationCurve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
-        let animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
-        
-        ilkButtonBttomConstraint.constant = (view.bounds).maxY - (convertedKeyboardEndFrame).minY
-        
-        UIView.animate(withDuration: animationDuration, delay: 0.0, options: [.beginFromCurrentState, animationCurve], animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
-
-    
 }
 extension Tak_mKurmaVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     

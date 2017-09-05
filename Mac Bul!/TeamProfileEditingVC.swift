@@ -17,6 +17,10 @@ class TeamProfileEditingVC: UIViewController {
     @IBOutlet weak var SehirTextField: EditingTextField!
     @IBOutlet weak var baslangıcDatePicker: CustomDatePicker!
     @IBOutlet weak var bitisDatePicker: CustomDatePicker!
+    @IBOutlet weak var başlangıçTarihiHeightConstrain: NSLayoutConstraint!
+    @IBOutlet weak var bitişTarihiHeightConstraint: NSLayoutConstraint!
+    
+    
     
     @IBOutlet weak var scroll: UIScrollView!{
         didSet{
@@ -27,7 +31,8 @@ class TeamProfileEditingVC: UIViewController {
     
     var oldTeam : BasketballTeam?
     var takımLogosuRengi : String?
-    
+    var isBaslangıçPickerShown = false
+    var isBitişPickerShown = false
     
     func initTeam(team :BasketballTeam){
         self.oldTeam = team
@@ -35,6 +40,8 @@ class TeamProfileEditingVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideTheBitişPicker()
+        self.hideTheBaslangıcPicker()
         registerForKeyboardNotifications()
         bitisDatePicker.minimumDate = baslangıcDatePicker.date.addingTimeInterval(7200)
 
@@ -89,7 +96,38 @@ class TeamProfileEditingVC: UIViewController {
         bitisDatePicker.minimumDate = baslangıcDatePicker.date
         bitisDatePicker.date = baslangıcDatePicker.date.addingTimeInterval(3600)
     }
-
+    @IBAction func başlangıçTarihiToogle(_ sender: UIButton) {
+        
+        if self.isBaslangıçPickerShown{
+            hideTheBaslangıcPicker()
+            self.isBaslangıçPickerShown = false
+        }else{
+            if isBitişPickerShown{
+                hideTheBitişPicker()
+                self.isBitişPickerShown = false
+            }
+            showTheBaslangıcPicker()
+            self.isBaslangıçPickerShown = true
+        }
+        
+    }
+    @IBAction func bitişTarihiToogle(_ sender: UIButton) {
+        
+        if self.isBitişPickerShown{
+            hideTheBitişPicker()
+            self.isBitişPickerShown = false
+        }else{
+            if isBaslangıçPickerShown{
+                hideTheBaslangıcPicker()
+                self.isBaslangıçPickerShown = false
+            }
+            showTheBitişPicker()
+            self.isBitişPickerShown = true
+        }
+        
+    }
+    
+ 
     @IBAction func kaydetButtonPrsd(_ sender: UIButton) {
         var logoName = String()
         
@@ -130,7 +168,7 @@ class TeamProfileEditingVC: UIViewController {
                 print("yey")
             }
         }
-        
+
         
     }
 
@@ -159,6 +197,22 @@ class TeamProfileEditingVC: UIViewController {
         dismissDetail()
     }
     
+    func showTheBaslangıcPicker(){
+        self.baslangıcDatePicker.isHidden = false
+        self.başlangıçTarihiHeightConstrain.constant = 296
+    }
+    func hideTheBaslangıcPicker(){
+        self.baslangıcDatePicker.isHidden = true
+        self.başlangıçTarihiHeightConstrain.constant = 75
+    }
+    func showTheBitişPicker(){
+        self.bitişTarihiHeightConstraint.constant = 296
+        self.bitisDatePicker.isHidden = false
+    }
+    func hideTheBitişPicker(){
+        self.bitişTarihiHeightConstraint.constant = 75
+        self.bitisDatePicker.isHidden = true
+    }
 }
 
 

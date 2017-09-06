@@ -50,7 +50,7 @@ class Tak_mKurmaVC: UIViewController{
     @IBOutlet weak var zamanLabel: UILabel!
     
     @IBOutlet weak var collecitionView: UICollectionView!
-  
+    
     @IBOutlet weak var ilkButtonBttomConstraint: NSLayoutConstraint!
     
     //Variables
@@ -85,12 +85,12 @@ class Tak_mKurmaVC: UIViewController{
             images.append(UIImage(named: "image\(i)")!)
         }
         
-
+        
         //keyboardStuff#######
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         //keyboardStuff#######
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,7 +98,7 @@ class Tak_mKurmaVC: UIViewController{
         self.ikinciSayfayıGizle()
         self.üçüncüSayfayıGizle()
         self.dördüncüSayfayıGizle()
- 
+        
         self.imageView.image = UIImage(named: teamLogoName)
     }
     
@@ -119,17 +119,14 @@ class Tak_mKurmaVC: UIViewController{
             }
         }else{
             
-            let alertController = UIAlertController(title: "Takımının bilgilerini eksiksiz girmlesin", message: "", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
-                alertController.dismiss(animated: true, completion: nil)
-            })
-            alertController.addAction(alertAction)
-            present(alertController, animated: true, completion: nil)
-            
+            if takimIsmiTextField.text == ""{
+                self.shakeTheTakımIsmiTextField()
+                
+            }
+            if takimSayısıTextField.text == "" {
+                self.shakeTheTakımSayısıTextField()
+            }
         }
-        
-        
-        
     }
     @IBAction func ikiniciButtonPrsd(_ sender: Any) {
         
@@ -185,23 +182,15 @@ class Tak_mKurmaVC: UIViewController{
                 
                 üçüncüSayfayıGizle()
                 dördüncüSayfayıGöster()
-               
+                
             }else{
-                let alertController = UIAlertController(title: "Pin koysan iyi edersin rakiplerin seni daha çabuk bulabilir", message: "", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
-                    alertController.dismiss(animated: true, completion: nil)
-                })
-                alertController.addAction(alertAction)
-                present(alertController, animated: true, completion: nil)
+                self.shakeTheMapView()
             }
         }else{
-            let alertController = UIAlertController(title: "Sehrini ve oynamak istediğin semtleri yaz rakipler seni kolay bulsun", message: "", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
-                alertController.dismiss(animated: true, completion: nil)
-            })
-            alertController.addAction(alertAction)
-            present(alertController, animated: true, completion: nil)
+            
+            self.shakeTheSehirView()
         }
+        
     }
     
     @IBAction func dismissButtonPrsd(_ sender: UIButton) {
@@ -214,31 +203,31 @@ class Tak_mKurmaVC: UIViewController{
     
     @IBAction func yasOrtlamasıSecSlider(_ sender: UISlider) {
         self.yasOrtSLider.value = roundf(yasOrtSLider.value)
-
+        
     }
     @IBAction func togglesTheBaslangıcPicker(_ sender: UIButton) {
         
         if isBaslangıcPickerShown == false {
-           
+            
             if isBitisPickerShown {
-                UIView.animate(withDuration: 0.3, animations: { 
+                UIView.animate(withDuration: 0.3, animations: {
                     self.bitişDatePickerSakla()
                 })
             }
             
-            UIView.animate(withDuration: 0.3, animations: { 
+            UIView.animate(withDuration: 0.3, animations: {
                 self.başlangıçDatePickerGöster()
             })
             
         }else{
-            UIView.animate(withDuration: 0.3, animations: { 
-               self.başlangıçDatePickerSakla()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.başlangıçDatePickerSakla()
             })
-           
+            
         }
         
     }
- 
+    
     @IBAction func togglesTheBitisPicker(_ sender: UIButton) {
         
         if isBitisPickerShown == false{
@@ -267,14 +256,14 @@ class Tak_mKurmaVC: UIViewController{
     @IBAction func pickAnAvatar(_ sender: UIButton) {
         
         if self.collecitionView.alpha == 0{
-            UIView.animate(withDuration: 0.3, animations: { 
+            UIView.animate(withDuration: 0.3, animations: {
                 self.collecitionView.alpha = 1
             })
         }
-      
-    }
-   
         
+    }
+    
+    
     
     
     @IBAction func arkaPlanaRenkVer(_ sender: UIButton) {
@@ -321,9 +310,9 @@ class Tak_mKurmaVC: UIViewController{
                                 // self.firsTime = false
                                 self.dismiss(animated: true, completion: nil)
                             })
-                        
+                            
                             alertController.addAction(alertAction)
-                           self.present(alertController, animated: true, completion: nil)
+                            self.present(alertController, animated: true, completion: nil)
                             
                             
                             
@@ -334,7 +323,7 @@ class Tak_mKurmaVC: UIViewController{
             }
         }
         
-     
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -342,7 +331,7 @@ class Tak_mKurmaVC: UIViewController{
     }
 }
 extension Tak_mKurmaVC : MKMapViewDelegate{
-
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -392,7 +381,7 @@ extension Tak_mKurmaVC : MKMapViewDelegate{
 }
 
 extension Tak_mKurmaVC : CLLocationManagerDelegate{
-
+    
     func configureLocationServices(){
         
         if authStatus == .notDetermined{
@@ -449,7 +438,7 @@ extension Tak_mKurmaVC : UICollectionViewDelegate,UICollectionViewDataSource,UIC
             self.imageView.image = UIImage(named : selectedImageName)
             self.teamLogoName = selectedImageName
             
-            UIView.animate(withDuration: 0.3, animations: { 
+            UIView.animate(withDuration: 0.3, animations: {
                 self.collecitionView.alpha = 0
             })
         }

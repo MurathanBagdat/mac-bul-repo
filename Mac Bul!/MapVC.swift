@@ -78,11 +78,14 @@ extension MapVC : MKMapViewDelegate{
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
+        if view.annotation is MKUserLocation{
+            return
+        }
             let selectedAnnot = mapView.selectedAnnotations.first as! Annotation
             let selectedTeamKey =  selectedAnnot.teamKey
             var selectedTeam = BasketballTeam()
         
+       
         
             DatabaseService.instance.getBasketballTeam(forKey: selectedTeamKey) { (basketballTeam, succes) in
                 if succes{

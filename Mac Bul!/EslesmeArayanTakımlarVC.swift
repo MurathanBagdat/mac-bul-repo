@@ -37,7 +37,10 @@ class EslesmeArayanTak_mlarVC: UIViewController {
         DatabaseService.instance.REF_BASKETBALLTEAM.observe(.value, with: { (snapshot) in
             DatabaseService.instance.getBasketballTeamsFeed { (basketballTeamsArray) in
                 self.teamsArray = basketballTeamsArray
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
             }
         })
         

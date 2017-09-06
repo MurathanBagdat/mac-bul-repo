@@ -88,6 +88,93 @@ extension Tak_mKurmaVC {
         self.bitişDatePicker.isHidden = false
         self.isBitisPickerShown = true
     }
+    //Animations
+    func shakeTheTakımIsmiTextField(){
+        UIView.animate(withDuration: 0.15, animations: {
+            self.takimIsmiTextField.transform = CGAffineTransform(translationX: 10, y: 0)
+        }, completion: { (succes) in
+            if succes{
+                UIView.animate(withDuration: 0.15, animations: {
+                    self.takimIsmiTextField.transform = CGAffineTransform(translationX: -10, y: 0)
+                }, completion: { (succes) in
+                    if succes{
+                        UIView.animate(withDuration: 0.15, animations: {
+                            self.takimIsmiTextField.transform = CGAffineTransform(translationX: 10 , y: 0)
+                        }, completion: { (succes) in
+                            if succes{
+                                UIView.animate(withDuration: 0.1, animations: {
+                                    self.takimIsmiTextField.transform = .identity
+                                }, completion: nil)
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+    func shakeTheTakımSayısıTextField(){
+        UIView.animate(withDuration: 0.15, animations: {
+            self.takimSayısıTextField.transform = CGAffineTransform(translationX: 10, y: 0)
+        }, completion: { (succes) in
+            if succes{
+                UIView.animate(withDuration: 0.15, animations: {
+                    self.takimSayısıTextField.transform = CGAffineTransform(translationX: -10, y: 0)
+                }, completion: { (succes) in
+                    if succes{
+                        UIView.animate(withDuration: 0.15, animations: {
+                            self.takimSayısıTextField.transform = CGAffineTransform(translationX: 10 , y: 0)
+                        }, completion: { (succes) in
+                            if succes{
+                                UIView.animate(withDuration: 0.1, animations: {
+                                    self.takimSayısıTextField.transform = .identity
+                                }, completion: nil)
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+    func shakeTheMapView(){
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+            self.mapView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }, completion: { (succes) in
+            if succes{
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.mapView.transform = .identity
+                }, completion: { (succes) in
+                    if succes{
+                        
+                    }
+                })
+            }
+        })
+        
+    }
+    func shakeTheSehirView(){
+        UIView.animate(withDuration: 0.15, animations: {
+            self.sehirYazmaView.transform = CGAffineTransform(translationX: 10, y: 0)
+        }, completion: { (succes) in
+            if succes{
+                UIView.animate(withDuration: 0.15, animations: {
+                    self.sehirYazmaView.transform = CGAffineTransform(translationX: -10, y: 0)
+                }, completion: { (succes) in
+                    if succes{
+                        UIView.animate(withDuration: 0.15, animations: {
+                            self.sehirYazmaView.transform = CGAffineTransform(translationX: 10 , y: 0)
+                        }, completion: { (succes) in
+                            if succes{
+                                UIView.animate(withDuration: 0.1, animations: {
+                                    self.sehirYazmaView.transform = .identity
+                                }, completion: nil)
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+
     //KEYBOARDSTUF!!
     func keyboardWillShowNotification(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification:notification)

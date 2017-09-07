@@ -22,6 +22,8 @@
 		074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F41F5768C600B4B98A /* CustomDatePicker.swift */; };
 		074F04F71F578D5900B4B98A /* UserdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F61F578D5900B4B98A /* UserdataService.swift */; };
 		074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F91F57917E00B4B98A /* TransitionExt.swift */; };
+		075668A91F60DA3D00DED301 /* ViewWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075668A81F60DA3D00DED301 /* ViewWithShadow.swift */; };
+		075668AB1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075668AA1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift */; };
 		0759AABD1F5EE22F00697D0E /* TakimKurmaVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759AABC1F5EE22F00697D0E /* TakimKurmaVCExt.swift */; };
 		07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */; };
 		07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D591F5467BD003D6358 /* BasketballTeam.swift */; };
@@ -71,6 +73,8 @@
 		074F04F41F5768C600B4B98A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		074F04F61F578D5900B4B98A /* UserdataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserdataService.swift; sourceTree = "<group>"; };
 		074F04F91F57917E00B4B98A /* TransitionExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
+		075668A81F60DA3D00DED301 /* ViewWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithShadow.swift; sourceTree = "<group>"; };
+		075668AA1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithRoundedBorder.swift; sourceTree = "<group>"; };
 		0759AABC1F5EE22F00697D0E /* TakimKurmaVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakimKurmaVCExt.swift; sourceTree = "<group>"; };
 		07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EslesmeArayanTakimCell.swift; sourceTree = "<group>"; };
 		07609D591F5467BD003D6358 /* BasketballTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeam.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				07FBEA7F1F53346A004EDDE2 /* RoundedView.swift */,
 				07C56C6F1F536F15001D1E88 /* ViewWithWhiteBorder.swift */,
 				0781D5941F5C436F0017A040 /* RoundedViewWithSHADOW.swift */,
+				075668A81F60DA3D00DED301 /* ViewWithShadow.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				07609D611F54F959003D6358 /* SearchTextField.swift */,
 				074F04F21F575C2F00B4B98A /* EditingTextField.swift */,
 				071580131F59F99500D4F42E /* RegistrationTextField.swift */,
+				075668AA1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift */,
 			);
 			name = TextField;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				0785ECA61F5623AB00B21812 /* AvatarPickerVC.swift in Sources */,
 				0786A8EF1F5F7676007BBBC9 /* GradientView.swift in Sources */,
 				07609D5C1F5474F3003D6358 /* CustomSlider.swift in Sources */,
+				075668AB1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift in Sources */,
 				07C56C721F53788F001D1E88 /* onboardingVC.swift in Sources */,
 				07A4109B1F5604430043A1D3 /* BorderViewWithCornerRadius.swift in Sources */,
 				071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */,
@@ -477,6 +484,7 @@
 				074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */,
 				07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */,
 				071D39421F55C9580074CF1F /* BasketballTeamMessage.swift in Sources */,
+				075668A91F60DA3D00DED301 /* ViewWithShadow.swift in Sources */,
 				07609D621F54F959003D6358 /* SearchTextField.swift in Sources */,
 				078FE8921F535D330036D722 /* BasketballMainVC.swift in Sources */,
 				07FABD031F54610B00B279AA /* EslesmeArayanTakımlarVC.swift in Sources */,

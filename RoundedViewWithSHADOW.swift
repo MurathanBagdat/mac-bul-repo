@@ -13,8 +13,8 @@ class RoundedViewWithSHADOW: UIView {
     override func awakeFromNib() {
         
         self.layer.cornerRadius = self.frame.height/2
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 0.85
+        self.layer.shadowRadius = 1
+        self.layer.shadowOpacity = 0.1
         self.layer.shadowColor = UIColor.black.cgColor
         self.clipsToBounds = false
         

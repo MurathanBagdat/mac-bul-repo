@@ -1,22 +1,20 @@
 //
-//  RoundedView.swift
+//  ViewWithShadow.swift
 //  Mac Bul!
 //
-//  Created by Melisa Kısacık on 27.08.2017.
+//  Created by Melisa Kısacık on 7.09.2017.
 //  Copyright © 2017 MurathanBagdat. All rights reserved.
 //
 
 import UIKit
 
-class RoundedView: UIView {
+class ViewWithShadow: UIView {
 
     override func awakeFromNib() {
-        
-        self.layer.cornerRadius = 8
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.75
-        self.layer.shadowRadius = 5
         super.awakeFromNib()
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 0.85
     }
 
 }

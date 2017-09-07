@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MaçBul!</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,11 +22,11 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Takımların yerini gösterebilmek için</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Takımların yerini gösterebilmek için</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Takımların yerini gösterebilmek için</string>
-	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Takımların yerini gösterebilmek için</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

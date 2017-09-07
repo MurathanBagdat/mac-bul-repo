@@ -13,7 +13,7 @@ class ImageViewWithShadow: UIImageView {
     override func awakeFromNib() {
         
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.85
+        self.layer.shadowOpacity = 0.75
         self.layer.shadowRadius = 5
         self.clipsToBounds = false
         

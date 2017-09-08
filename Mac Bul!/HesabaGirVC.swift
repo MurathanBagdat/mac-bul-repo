@@ -12,8 +12,8 @@ class HesabaGirVC: UIViewController {
     
     
     //Outlets
-    @IBOutlet weak var emailField: TextFieldWithInsets!
-    @IBOutlet weak var passwordField: TextFieldWithInsets!
+    @IBOutlet weak var emailField: DesingableTextFieldWithAnImage!
+    @IBOutlet weak var passwordField: DesingableTextFieldWithAnImage!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -26,11 +26,14 @@ class HesabaGirVC: UIViewController {
         guard let email = emailField.text , emailField.text != "" else {return}
         guard let password = passwordField.text , passwordField.text != "" else {return}
         spinner.isHidden = false
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
         spinner.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         
         AuthService.instance.signInUser(withEmail: email, andPassword: password) { (succes, error) in
             if succes{
+                sleep(1)
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()

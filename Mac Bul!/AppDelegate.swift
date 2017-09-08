@@ -24,15 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser == nil {
             
             let stoayboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let onboardingVC = stoayboard.instantiateViewController(withIdentifier: "onboardingVC")
+            let onboardingVC = stoayboard.instantiateViewController(withIdentifier: "WelcomeScreen")
             
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(onboardingVC, animated: true, completion: nil)
             
         }
-        
-        
-        
         return true
     }
 

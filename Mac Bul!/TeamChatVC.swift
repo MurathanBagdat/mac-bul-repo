@@ -20,7 +20,7 @@ class TeamChatVC: UIViewController {
         }
     }
 
-    @IBOutlet weak var messageTextField: TextFieldWithInsets!
+    @IBOutlet weak var messageTextField: UITextView!
     
     @IBOutlet weak var tableView: UITableView!{
         didSet{
@@ -40,12 +40,16 @@ class TeamChatVC: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var takimIsmiLabel: UILabel!
     @IBOutlet weak var takimLogoImage: RoundedImage!
+    @IBOutlet weak var trailingConstraintForTextView: NSLayoutConstraint!
     
+    deinit {
+        print("chatVC killed")
+    }
     //Variables
     var team : BasketballTeam?
     var messages : [BasketballTeamMessage] = [BasketballTeamMessage(content: "Henüz hiç mesaj yok!", messageID: "", senderID: "", timestamp: "", teamKey: "", senderUsername : "")]
     var takımKurucuUID : String?
-    
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +59,13 @@ class TeamChatVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
         
+        sendButton.isHidden = true
+        trailingConstraintForTextView.constant = 10
+        let amountOfLines :CGFloat = 6
+        let maxHeight = (messageTextField.font?.lineHeight)!*amountOfLines
+        messageTextField.sizeThatFits(CGSize(width: messageTextField.frame.width, height: maxHeight))
         
-        
-        
+        messageTextField.delegate = self
         guard let takımKey = team?.takımKey else {
             dismiss(animated: true, completion: nil)
             return}
@@ -240,6 +248,29 @@ extension TeamChatVC {
         self.view.endEditing(true)
     }
     
+}
+
+extension TeamChatVC : UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        if messageTextField.text == ""{
+            UIView.animate(withDuration: 0.3, animations: {
+                self.isTyping = false
+                self.trailingConstraintForTextView.constant = 10
+                self.sendButton.isHidden = true
+            })
+        }else{
+            
+            if isTyping == false{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.trailingConstraintForTextView.constant = 50
+                    self.sendButton.isHidden = false
+                })
+            }
+            isTyping = true
+        }
+    }
 }
 
 

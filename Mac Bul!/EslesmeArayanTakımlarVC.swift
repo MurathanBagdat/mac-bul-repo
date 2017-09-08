@@ -11,11 +11,13 @@ import Firebase
 
 let eslesmeArayanTakımCellIde = "eslesmeArayanTakımCell"
 
-class EslesmeArayanTak_mlarVC: UIViewController {
+class EslesmeArayanTak_mlarVC: UIViewController{
 
     //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var aramaTextField: SearchTextField!
+    @IBOutlet weak var tabBarItemTeams: UITabBarItem!
+    @IBOutlet weak var slider: UIActivityIndicatorView!
     
     
     //Varibles
@@ -28,17 +30,20 @@ class EslesmeArayanTak_mlarVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
-
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        
+        slider.startAnimating()
         DatabaseService.instance.REF_BASKETBALLTEAM.observe(.value, with: { (snapshot) in
             DatabaseService.instance.getBasketballTeamsFeed { (basketballTeamsArray) in
                 self.teamsArray = basketballTeamsArray
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.slider.stopAnimating()
                 }
                 
             }
@@ -47,8 +52,6 @@ class EslesmeArayanTak_mlarVC: UIViewController {
     }
     @IBAction func logoutButtonPrsd(_ sender: UIButton) {
         try? Auth.auth().signOut()
-        let hesapOluştırVC = storyboard?.instantiateViewController(withIdentifier: "HesapOlusturVC") as! HesapOlusturVC
-        present(hesapOluştırVC, animated: true, completion: nil)
     }
     @IBAction func editingChanged(_ sender: SearchTextField) {
         
@@ -80,6 +83,15 @@ class EslesmeArayanTak_mlarVC: UIViewController {
         }
         
   }
+    @IBAction func dismissbuttonPrsd(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToEslesmeArayanTakımlarVC(unwindSegue : UIStoryboardSegue){
+        print("unwind")
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

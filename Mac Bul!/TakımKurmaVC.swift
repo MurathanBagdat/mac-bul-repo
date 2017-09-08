@@ -80,6 +80,9 @@ class Tak_mKurmaVC: UIViewController{
         collecitionView.delegate = self
         collecitionView.dataSource = self
         
+        self.baslangıçDatePciker.setValue(UIColor.white, forKey: "textColor")
+        self.bitişDatePicker.setValue(UIColor.white, forKey: "textColor")
+        
         for i in 0...18{
             
             images.append(UIImage(named: "image\(i)")!)

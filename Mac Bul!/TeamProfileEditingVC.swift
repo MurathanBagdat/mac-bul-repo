@@ -28,6 +28,9 @@ class TeamProfileEditingVC: UIViewController {
             scroll.addGestureRecognizer(tab)
         }
     }
+    deinit {
+        print("editingprofile killed")
+    }
     
     var oldTeam : BasketballTeam?
     var takımLogosuRengi : String?
@@ -144,7 +147,8 @@ class TeamProfileEditingVC: UIViewController {
             })
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
-            return}
+            return
+        }
         guard let yeniSehir = SehirTextField.text , SehirTextField.text != "" else {
             let alertController = UIAlertController(title: "Oynamak istediğin ve sana yakın olan semtleri gir", message: "", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Tamam", style: .cancel, handler: { (action) in
@@ -165,7 +169,7 @@ class TeamProfileEditingVC: UIViewController {
         
         DatabaseService.instance.updatingBasketballTeamData(forTeamKey: (oldTeam?.takımKey)!, baslangıçTarihi: baslangıçDateInString, bitişTarihi: bitisDateInString, takımIsmi: yeniTakimIsmi, sehir: yeniSehir, logoIsmi: logoName, logoRengi: takımLogosuRengi!) { (succes) in
             if succes{
-                print("yey")
+                self.performSegue(withIdentifier: "unwindToTeamsVC", sender: nil)
             }
         }
 

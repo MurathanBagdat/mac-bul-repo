@@ -10,6 +10,7 @@
 		0703F5C01F58E6A300A9BC34 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0703F5BF1F58E6A300A9BC34 /* MapVC.swift */; };
 		071580141F59F99500D4F42E /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071580131F59F99500D4F42E /* RegistrationTextField.swift */; };
 		071580161F5A043400D4F42E /* TakımKurmaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071580151F5A043400D4F42E /* TakımKurmaVC.swift */; };
+		071A87821F62008F00556BDA /* DesingableTextFieldWithAnImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071A87811F62008F00556BDA /* DesingableTextFieldWithAnImage.swift */; };
 		071D393E1F55AF850074CF1F /* TeamChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D393D1F55AF850074CF1F /* TeamChatVC.swift */; };
 		071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */; };
 		071D39421F55C9580074CF1F /* BasketballTeamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D39411F55C9580074CF1F /* BasketballTeamMessage.swift */; };
@@ -17,6 +18,7 @@
 		0737E1AB1F5A2B6A006EA3A5 /* pinWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */; };
 		074003FB1F59B9DC00328DEF /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074003FA1F59B9DC00328DEF /* CustomPin.swift */; };
 		074784491F5D91E400593650 /* ImageViewWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074784481F5D91E400593650 /* ImageViewWithShadow.swift */; };
+		0749D4571F6221B900B44A97 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0749D4561F6221B900B44A97 /* DesignableButton.swift */; };
 		074F04EC1F5758C700B4B98A /* TeamProfileEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */; };
 		074F04F31F575C2F00B4B98A /* EditingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F21F575C2F00B4B98A /* EditingTextField.swift */; };
 		074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F41F5768C600B4B98A /* CustomDatePicker.swift */; };
@@ -24,6 +26,10 @@
 		074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F04F91F57917E00B4B98A /* TransitionExt.swift */; };
 		075668A91F60DA3D00DED301 /* ViewWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075668A81F60DA3D00DED301 /* ViewWithShadow.swift */; };
 		075668AB1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075668AA1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift */; };
+		07594A1F1F61857700CDBDC2 /* TextViewWithCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07594A1E1F61857700CDBDC2 /* TextViewWithCornerRadius.swift */; };
+		07594A211F61901C00CDBDC2 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07594A201F61901C00CDBDC2 /* CustomTabBarController.swift */; };
+		07594A231F619DDE00CDBDC2 /* LabelWithWhiteBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07594A221F619DDE00CDBDC2 /* LabelWithWhiteBorder.swift */; };
+		07594A251F61A2C100CDBDC2 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07594A241F61A2C100CDBDC2 /* WelcomeScreen.swift */; };
 		0759AABD1F5EE22F00697D0E /* TakimKurmaVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759AABC1F5EE22F00697D0E /* TakimKurmaVCExt.swift */; };
 		07609D581F54639E003D6358 /* EslesmeArayanTakimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */; };
 		07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07609D591F5467BD003D6358 /* BasketballTeam.swift */; };
@@ -61,6 +67,7 @@
 		0703F5BF1F58E6A300A9BC34 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		071580131F59F99500D4F42E /* RegistrationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
 		071580151F5A043400D4F42E /* TakımKurmaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TakımKurmaVC.swift"; sourceTree = "<group>"; };
+		071A87811F62008F00556BDA /* DesingableTextFieldWithAnImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesingableTextFieldWithAnImage.swift; sourceTree = "<group>"; };
 		071D393D1F55AF850074CF1F /* TeamChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamChatVC.swift; sourceTree = "<group>"; };
 		071D393F1F55C7CB0074CF1F /* TeamChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamChatCell.swift; sourceTree = "<group>"; };
 		071D39411F55C9580074CF1F /* BasketballTeamMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeamMessage.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pinWithImage.swift; sourceTree = "<group>"; };
 		074003FA1F59B9DC00328DEF /* CustomPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
 		074784481F5D91E400593650 /* ImageViewWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewWithShadow.swift; sourceTree = "<group>"; };
+		0749D4561F6221B900B44A97 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		074F04EB1F5758C700B4B98A /* TeamProfileEditingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileEditingVC.swift; sourceTree = "<group>"; };
 		074F04F21F575C2F00B4B98A /* EditingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTextField.swift; sourceTree = "<group>"; };
 		074F04F41F5768C600B4B98A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 		074F04F91F57917E00B4B98A /* TransitionExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
 		075668A81F60DA3D00DED301 /* ViewWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithShadow.swift; sourceTree = "<group>"; };
 		075668AA1F60E6CD00DED301 /* TextFieldWithRoundedBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithRoundedBorder.swift; sourceTree = "<group>"; };
+		07594A1E1F61857700CDBDC2 /* TextViewWithCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithCornerRadius.swift; sourceTree = "<group>"; };
+		07594A201F61901C00CDBDC2 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		07594A221F619DDE00CDBDC2 /* LabelWithWhiteBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithWhiteBorder.swift; sourceTree = "<group>"; };
+		07594A241F61A2C100CDBDC2 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		0759AABC1F5EE22F00697D0E /* TakimKurmaVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakimKurmaVCExt.swift; sourceTree = "<group>"; };
 		07609D571F54639E003D6358 /* EslesmeArayanTakimCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EslesmeArayanTakimCell.swift; sourceTree = "<group>"; };
 		07609D591F5467BD003D6358 /* BasketballTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballTeam.swift; sourceTree = "<group>"; };
@@ -184,6 +196,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		07594A1D1F61855800CDBDC2 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				07594A1E1F61857700CDBDC2 /* TextViewWithCornerRadius.swift */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
 		0785ECA81F5623B100B21812 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +214,7 @@
 		07FABD041F54634500B279AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07594A1D1F61855800CDBDC2 /* TextView */,
 				074F04EF1F575AFE00B4B98A /* Slider */,
 				074F04EE1F575AE600B4B98A /* ImageView */,
 				074F04ED1F575AD300B4B98A /* View */,
@@ -201,6 +222,7 @@
 				074F04F01F575B1000B4B98A /* Button */,
 				074F04F41F5768C600B4B98A /* CustomDatePicker.swift */,
 				0737E1AA1F5A2B6A006EA3A5 /* pinWithImage.swift */,
+				07594A221F619DDE00CDBDC2 /* LabelWithWhiteBorder.swift */,
 			);
 			name = Resources;
 			path = ..;
@@ -260,6 +282,9 @@
 				0785ECA91F56295900B21812 /* AvatarPickerCell.swift */,
 				074003FA1F59B9DC00328DEF /* CustomPin.swift */,
 				0786A8EE1F5F7676007BBBC9 /* GradientView.swift */,
+				07594A201F61901C00CDBDC2 /* CustomTabBarController.swift */,
+				071A87811F62008F00556BDA /* DesingableTextFieldWithAnImage.swift */,
+				0749D4561F6221B900B44A97 /* DesignableButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +292,7 @@
 		07FBEA871F533C01004EDDE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				07594A241F61A2C100CDBDC2 /* WelcomeScreen.swift */,
 				07FBEA8C1F533C9A004EDDE2 /* HesapOlusturVC.swift */,
 				07FBEA8A1F533C36004EDDE2 /* HesabaGirVC.swift */,
 				07FBEA961F534A16004EDDE2 /* SecimVC.swift */,
@@ -474,11 +500,15 @@
 				071580161F5A043400D4F42E /* TakımKurmaVC.swift in Sources */,
 				074F04F51F5768C600B4B98A /* CustomDatePicker.swift in Sources */,
 				074F04EC1F5758C700B4B98A /* TeamProfileEditingVC.swift in Sources */,
+				07594A211F61901C00CDBDC2 /* CustomTabBarController.swift in Sources */,
 				071580141F59F99500D4F42E /* RegistrationTextField.swift in Sources */,
 				07609D601F54EBE3003D6358 /* TableViewController.swift in Sources */,
+				071A87821F62008F00556BDA /* DesingableTextFieldWithAnImage.swift in Sources */,
 				07FBEA991F535439004EDDE2 /* WhiteBorderButton.swift in Sources */,
 				0781D5951F5C436F0017A040 /* RoundedViewWithSHADOW.swift in Sources */,
 				074784491F5D91E400593650 /* ImageViewWithShadow.swift in Sources */,
+				07594A1F1F61857700CDBDC2 /* TextViewWithCornerRadius.swift in Sources */,
+				07594A251F61A2C100CDBDC2 /* WelcomeScreen.swift in Sources */,
 				07294EAA1F5738F6004F20D2 /* TeamProfileVCForPublic.swift in Sources */,
 				074F04F31F575C2F00B4B98A /* EditingTextField.swift in Sources */,
 				074F04FA1F57917E00B4B98A /* TransitionExt.swift in Sources */,
@@ -489,6 +519,7 @@
 				078FE8921F535D330036D722 /* BasketballMainVC.swift in Sources */,
 				07FABD031F54610B00B279AA /* EslesmeArayanTakımlarVC.swift in Sources */,
 				07FBEA681F531DDE004EDDE2 /* AppDelegate.swift in Sources */,
+				07594A231F619DDE00CDBDC2 /* LabelWithWhiteBorder.swift in Sources */,
 				07609D5A1F5467BD003D6358 /* BasketballTeam.swift in Sources */,
 				0785ECAA1F56295900B21812 /* AvatarPickerCell.swift in Sources */,
 				0703F5C01F58E6A300A9BC34 /* MapVC.swift in Sources */,
@@ -496,6 +527,7 @@
 				074F04F71F578D5900B4B98A /* UserdataService.swift in Sources */,
 				074003FB1F59B9DC00328DEF /* CustomPin.swift in Sources */,
 				07FBEA8B1F533C36004EDDE2 /* HesabaGirVC.swift in Sources */,
+				0749D4571F6221B900B44A97 /* DesignableButton.swift in Sources */,
 				071D39401F55C7CB0074CF1F /* TeamChatCell.swift in Sources */,
 				07FBEA911F534073004EDDE2 /* AuthService.swift in Sources */,
 				07FBEA801F53346A004EDDE2 /* RoundedView.swift in Sources */,

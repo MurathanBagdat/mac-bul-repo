@@ -13,7 +13,7 @@ class ViewWithWhiteBorder: UIView {
     
     override func awakeFromNib() {
         
-        self.layer.borderWidth = 2
+        self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.76

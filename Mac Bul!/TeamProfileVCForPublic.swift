@@ -26,8 +26,11 @@ class TeamProfileVCForPublic: UIViewController {
     @IBOutlet weak var ekstraAçıklamaHeadre: UILabel!
 
     
-    var team : BasketballTeam?
     
+    var team : BasketballTeam?
+    deinit {
+        print("publicProfileVC killed")
+    }
     func initTeam(selectedTeam : BasketballTeam){
         self.team = selectedTeam
         
